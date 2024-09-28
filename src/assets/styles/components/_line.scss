@@ -2,7 +2,7 @@
 
 .line {
   &:is(.colored, .gray) {
-    &.v1 {
+    &:is(.lnc-v1, .lng-v1, .lng-v2){
       height: 1px;
       width: 100%;
       padding-inline: 0px;
@@ -10,15 +10,20 @@
     }
   }
   &.colored {
-    &.v1 {
+    &.lnc-v1 {
       background-color: #34785f;
     }
   }
 
   &.gray {
-    &.v1 {
-      background-color: $graySP-A300;
+    &:is(.lng-v1, .lng-v2) {
       margin-block: var(--s-Z2);
+    }
+    &.lng-v1{
+      background-color: $graySP-A300;
+    }
+    &.lng-v2{
+      background-color: $graySP-A200;
     }
   }
 }

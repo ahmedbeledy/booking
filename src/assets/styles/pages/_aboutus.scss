@@ -38,12 +38,12 @@
   padding: $section-padding;
   margin-inline: auto !important;
   header {
-    font-size: 3.5rem;
+    font-size: calc(var(--s-B2) * 2 - 0.2rem);
   }
   p {
     color: $graySP-A600;
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+    font-size: var(--s-A4);
+    line-height: var(--s-A5);
   }
 }
 
@@ -51,8 +51,8 @@
   position: relative;
   z-index: 1;
   height: calc(10vw + 450px);
-  background: $main-gradient;//linear-gradient(to bottom, transparent 0% 30%, $cgreen-A700 30%);
-  &::before{
+  background: $main-gradient; //linear-gradient(to bottom, transparent 0% 30%, $cgreen-A700 30%);
+  &::before {
     content: "";
     position: absolute;
     top: 0;

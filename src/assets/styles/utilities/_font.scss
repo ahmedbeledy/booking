@@ -40,20 +40,16 @@
   line-height: 9vw;
 }
 
-.font-sets {
-  &.f-S0 {
-    @extend .main-font;
-    @extend .letter-spacing-0;
 
-    color: $graySP-Z000;
-    &.f-0 {
-      @include DynamicFontMixin($f-A4, var(--s-VW3), $f-B4);
-    }
-    &.f-1 {
-      @include DynamicFontMixin($f-Z0, var(--s-VW2), $f-A3);
-    }
-    &.f-2{
-      @include FontMixin($f-A1);
-    }
-  }
+.f-A1{
+  @include FontMixin($f-A1);
+}
+.f-Z0-A3 {
+  @include DynamicFontMixin($f-Z0, var(--s-VW2), $f-A3);
+}
+.f-A1-A2 {
+  @include DynamicFontMixin($f-A1, var(--s-VW2), $f-A2);
+}
+.f-A4-B4 {
+  @include DynamicFontMixin($f-A4, var(--s-VW3), $f-B4);
 }

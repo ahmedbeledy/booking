@@ -12,15 +12,15 @@
   .form-header {
     &.v1 {
       color: $cgreen-A700;
-      &>*{
+      & > * {
         padding-inline-start: 0rem;
       }
-      h2{
+      h2 {
         font-weight: 800;
       }
-      p{
+      p {
         font-weight: 320;
-        a{
+        a {
           color: inherit;
           font-weight: 600;
           text-decoration: underline;
@@ -30,11 +30,11 @@
     }
   }
 
-  .form-link{
+  .form-link {
     display: block;
     color: inherit;
     max-width: max-content;
-    &.v1{
+    &.v1 {
       color: $cgreen-A100;
       font-weight: 300;
     }
@@ -51,12 +51,21 @@
     background-color: $graySP-A100;
     padding: $control-padding;
     border-radius: 0.25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    // overflow: hidden;
+    position: relative;
+
+    &:hover{
+      .error{
+        opacity: 0;
+        pointer-events: none;
+        transition-delay: 0.3s;
+      }
+    }
 
     & > * {
       grid-row: 1/2;
     }
+
     :is(.prefix, .suffix) {
       display: grid;
       place-items: center;
@@ -74,44 +83,89 @@
 
     &:has(.field:focus) {
       outline: 2px solid $cgreen-A700;
+      &:has(.error, .ng-invalid:not(.ng-untouched)) {
+        outline: 2px solid $cred-Z000;
+      }
+      .error{
+        opacity: 0;
+        pointer-events: none;
+        transition-delay: 0.25s;
+      }
     }
 
-    &:has(select:not(.defPad), textarea) {
+    &:has(select, textarea) {
       padding: 0;
+      .suffix {
+        padding-inline-end: $control-padding;
+      }
+      .prefix {
+        padding-inline-start: $control-padding;
+      }
+      .error{
+        top: 80%;
+      }
+    }
+
+    &:has(.suffix) {
+      .field {
+        &:is(select, textarea) {
+          padding-inline-end: 0;
+        }
+      }
+    }
+
+    &:has(.prefix) {
+      .field {
+        &:is(select, textarea) {
+          padding-inline-start: 0;
+        }
+      }
     }
 
     .field {
       border: none;
       background-color: transparent;
+      overflow: hidden;
+      text-overflow: ellipsis;
       grid-column: 2/3;
 
-      &:is(select:not(.defPad), textarea) {
-        padding: $control-padding;
+      &:is(select, textarea) {
+        padding: calc($control-padding + var(--s-Z8)) 0rem calc($control-padding + var(--s-Z8)) $control-padding;
+        margin-inline-end: $control-padding;
       }
 
       &::placeholder {
         color: black;
       }
-      
+
       &:is(:focus) {
         border: none;
         outline: none;
       }
     }
-    // &:has(input:focus, textarea:focus, select:focus){
-    //     outline: 2px solid $cgreen-A700;
-    // }
-    // :is(input, textarea, select){
-    //     border: none;
-    //     background-color: transparent;
-    //     &::placeholder{
-    //         color: black;
-    //     }
-    //     &:is(:focus){
-    //         border: none;
-    //         outline: none;
-    //     }
-    // }
-  }
 
+    &:has(.error, .ng-invalid:not(.ng-untouched)) {
+      outline: 2px solid $cred-Z000;
+    }
+
+    .error {
+      position: absolute;
+      top: 100%;
+      left: 5%;
+      transform: translateY(5%);
+      z-index: 1;
+      font-size: var(--s-Z2) !important;
+      color: $cred-Z000;
+      background-color: hsl(0, 100%, 100%);
+      box-shadow: 0rem 0.1rem 0.25rem hsla(0, 50%, 10%, 0.1);
+      padding-inline: var(--s-Z7);
+      opacity: 0.95;
+      transition: opacity 0.2s;
+      * {
+        font-size: var(--s-Z2) !important;
+        margin: 0rem !important;
+        padding: 0rem !important;
+      }
+    }
+  }
 }

@@ -6,15 +6,6 @@
   color: #fff;
   width: 100%; //
   height: auto; //
-  &.onMapHover {
-    border: 1.5px solid $graySP-A500;
-    border-radius: 8px;
-    .col-6:first-child{
-      padding-inline-start: 0rem;
-      
-    }
-  }
-
   // max-width: 278px;
   // min-width: 157px;
   // max-height: 425px;
@@ -26,7 +17,6 @@
     :is(.old-price, .card-title) {
       color: $cgreen-A900;
     }
-
     :is(.loc-rate-group, .room-details) {
       display: flex;
       gap: clamp(var(--s-Z7), var(--s-VW1), var(--s-Z2));
@@ -42,7 +32,7 @@
     .room-details {
       @include FontMixin($f-Z0);
       color: $graySP-A500;
-      margin-block: var(--s-Z7);
+      margin-top: var(--s-Z9);
       .room-detail {
         background-color: hsl(0, 0%, 95%);
         padding: var(--s-Z8) var(--s-Z5);
@@ -101,7 +91,6 @@
   }
 
   .facilities {
-    @include FontMixin($f-Z1);
     color: $graySP-A400;
     & > *:not(:last-child)::after {
       content: " . ";
@@ -122,16 +111,5 @@
     flex: 1 1 auto;
     padding-left: var(--s-Z6) !important;
     padding-top: var(--s-Z6) !important;
-  }
-}
-
-[dir='rtl']{
-  .place-card {
-    &.onMapHover {
-      .col-6:first-child{
-        padding-inline-start: unset;
-        padding-inline-end: 0rem;
-      }
-    }
   }
 }

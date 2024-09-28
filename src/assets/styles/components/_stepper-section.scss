@@ -1,0 +1,96 @@
+@use "../abstracts/variables" as *;
+
+.stepper-section {
+  padding: var(--s-A2);
+  :is(.step-header, .step-card) {
+    max-width: var(--s-X8);
+  }
+  .step-header {
+    @include FontMixin($f-A6);
+    margin-bottom: var(--s-A2);
+    font-weight: 700;
+  }
+  .step-card {
+    // width: var(--s-X8);
+    // min-height: var(--s-X8);
+    background-color: white;
+    padding: var(--s-A1);
+    border: 1px solid hsla(0, 20%, 20%, 0.07);
+    border-radius: var(--s-Z7);
+
+    .subheader {
+      &:is(.sH-v0, .sH-v1, .sH-v2, .sH-v4) {
+        margin-bottom: var(--s-Z5);
+        font-weight: 600;
+      }
+      &:is(.sH-v0, .sH-v3) {
+        @include FontMixin($f-Z0);
+      }
+      &.sH-v1 {
+        @include FontMixin($f-A1);
+      }
+      &.sH-v2 {
+        @include FontMixin($f-A2);
+      }
+      &.sH-v4 {
+        @include FontMixin($f-Z1);
+      }
+    }
+
+    .SCLabel-group {
+      display: flex;
+      gap: var(--s-Z6);
+      margin-bottom: var(--s-Z8);
+      align-items: center;
+      margin-left: var(--s-Z9);
+      &.addMrgn {
+        margin-bottom: calc(var(--s-Z7) + var(--s-Z9));
+      }
+      .ptext {
+        margin-bottom: 0rem;
+      }
+      input:is([type="radio"], [type="checkbox"]) {
+        &.adj-pos {
+          margin-top: calc(var(--s-Z7) + var(--s-Z9));
+          justify-self: center;
+          align-self: flex-start;
+        }
+      }
+    }
+    .ptext {
+      line-height: var(--s-A3);
+      &.ptxt-sm {
+        font-size: var(--s-Z1);
+        font-weight: 300;
+      }
+    }
+    input:is([type="radio"], [type="checkbox"]) {
+      transform: scale(1.25);
+    }
+    .control {
+      background-color: transparent;
+      border: 2px solid $graySP-A200;
+      padding: calc($control-padding / 2);
+
+      &:has(select, textarea) {
+        padding: 0rem;
+      }
+
+      &:has(.field:is(:hover, :focus)) {
+        border-color: $cblue-A100;
+        outline: none;
+      }
+      .field::placeholder {
+        color: $graySP-A600;
+        font-weight: 300;
+      }
+      .field {
+        &:is(select, textarea) {
+          $result: calc(($control-padding + var(--s-Z7)) / 2);
+          padding: $result 0rem $result $result;
+          margin-inline-end: $result;
+        }
+      }
+    }
+  }
+}

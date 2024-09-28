@@ -10,12 +10,22 @@
 }
 
 .margin-set{
-  --margin: var(--s-Z0);
-  &.m-v1{
-    margin: var(--margin);
+  --top-margin:  var(--s-Z0);
+  --bottom-margin:  var(--s-Z0);
+  --block-margin: var(--top-margin) var(--bottom-margin);
+  --right-margin:  var(--s-Z0);
+  --left-margin:  var(--s-Z0);
+  --inline-margin: var(--right-margin) var(--left-margin);
+  --margin: var(--block-margin) var(--inline-margin);
+
+  margin: var(--margin);
+
+  &.mrg-v1{
+    margin-inline: unset;
   }
 
-  &.m-v2{
-    margin-block: var(--margin);
+  &.mrg-v2{
+    --block-margin: var(--s-A9);
+    --inline-margin: var(--s-A5);
   }
 }

@@ -10,9 +10,11 @@
     background-size: 115% 115%;
   }
   &.defBG {
-    background-image: url("/assets/img/IMG_3207.jpeg");
+    background-image: url("/assets/img/testimg.jpg");
   }
-
+  :is(.title, .paragraph){
+    color: $graySP-Z000;
+  }
   .title {
     @include FontMixin($f-A7);
   }

@@ -49,7 +49,7 @@
 
   &:is(.btn-green-outline, .btn-link, .btn-blue-outline, .btn-red-outline) {
     background-color: transparent;
-    &:hover {
+    &:hover{
       color: $graySP-Z000;
     }
   }
@@ -67,23 +67,11 @@
     padding-block: clamp(var(--s-Z2), var(--s-VW2), var(--s-A1));
   }
 
-  &:is(
-      .btn-green-gradient-lg,
-      .btn-orange-gradient-lg,
-      .btn-green-dark-sm,
-      .btn-green-outline
-    ) {
+  &:is(.btn-green-gradient-lg, .btn-orange-gradient-lg, .btn-green-dark-sm, .btn-green-outline) {
     width: 100%;
   }
 
-  &:is(
-      .btn-green-gradient-lg,
-      .btn-orange-gradient-lg,
-      .btn-green-dark-sm,
-      .btn-green-outline,
-      .btn-blue-outline,
-      .btn-red-outline
-    ) {
+  &:is(.btn-green-gradient-lg, .btn-orange-gradient-lg, .btn-green-dark-sm, .btn-green-outline, .btn-blue-outline, .btn-red-outline) {
     font-weight: 300;
   }
 
@@ -101,14 +89,7 @@
     padding: var(--s-Z5) var(--s-A2) !important;
   }
 
-  &:is(
-      .btn-orange-light-md,
-      .btn-green-sm,
-      .btn-green-gradient-sm,
-      .btn-green-outline,
-      .btn-blue-outline,
-      .btn-red-outline
-    ),
+  &:is(.btn-orange-light-md, .btn-green-sm, .btn-green-gradient-sm, .btn-green-outline, .btn-blue-outline, .btn-red-outline),
   &:is(.btn-orange-light-md, .btn-green-sm, .btn-green-outline) > i {
     @include FontMixin($f-Z0);
   }
@@ -117,7 +98,7 @@
     padding: var(--s-Z3) var(--s-Z5) !important;
   }
 
-  &:is(.btn-blue-outline, .btn-red-outline) {
+  &:is(.btn-blue-outline, .btn-red-outline){
     padding: calc(var(--s-Z7) + var(--s-Z9)) var(--s-Z5) !important;
   }
 
@@ -162,7 +143,7 @@
       background-color: $cgreen-A900;
     }
   }
-
+  
   &.btn-link {
     padding-inline: 0rem;
     color: $cblue-A100;
@@ -171,21 +152,28 @@
     }
   }
 
-  &.btn-blue-outline {
+  &.btn-blue-outline{
     color: $cblue-A200;
     border: 1px solid $cblue-A200;
-    &:hover {
+    &:hover{
       background-color: $cblue-A200;
     }
   }
-  &.btn-red-outline {
+  &.btn-red-outline{
     color: $cred-Z000;
     border: 1px solid $cred-Z000;
-    &:hover {
+    &:hover{
       background-color: $cred-Z000;
     }
   }
 }
+
+// .btn-see-more {
+//   display: block;
+//   margin: 2rem auto;
+//   color: #fff;
+//   border-color: #fff;
+// }
 
 /**/
 .button {
@@ -203,10 +191,3 @@
   }
 }
 /**/
-[dir="rtl"] {
-  .btn-set {
-    &.btn-orange-light-md {
-      padding: var(--s-Z5) clamp(var(--s-Z9), var(--s-VW1), var(--s-Z5)) !important;
-    }
-  }
-}
