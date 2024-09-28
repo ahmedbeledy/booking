@@ -1,0 +1,213 @@
+:root {
+  --s-Z9: 0.1rem;
+  --s-Z8: 0.15rem;
+  --s-Z7: 0.25rem;
+  --s-Z6: 0.5rem;
+  --s-Z5: 0.625rem;
+  --s-Z4: 0.688rem;
+  // Bottom Border Line For Font Size
+  --s-Z3: 0.75rem; //12px
+  --s-Z2: 0.813rem; //13px
+  --s-Z1: 0.9rem;
+  --s-Z0: 1rem; //16px
+  --s-A1: 1.125rem; //18px
+  --s-A2: 1.25rem; //20px
+  --s-A3: 1.375rem; //22px
+  --s-A4: 1.563rem; //25px
+  --s-A5: 1.688rem; //27px
+  --s-A6: 1.75rem; //28px
+  --s-A7: 1.875rem; //30px
+  --s-A8: 1.925rem;
+  --s-A9: 2rem; //32px
+  --s-B1: 2.125rem; //34px
+  --s-B2: 2.313rem; //37px
+  --s-B3: 2.5rem; //40px
+  --s-B4: 2.75rem; //44px
+  --s-B5: 3.125rem; //50px
+  --s-B6: 3.375rem; //54px
+  --s-X0: 7.063rem; //113px
+  --s-X1: 7.75rem; //124px
+  --s-X2: 12.5rem; //200px
+  --s-X3: 17.313rem; //277px
+  --s-X4: 20.375rem; //326px
+  --s-X5: 22.063rem; //353px
+  --s-X6: 25rem; //400px
+  --s-X7: 28.125rem; //450px
+  --s-X8: 31.938rem; //511px
+  --s-X9: 45.25rem;//724px
+
+  --s-DVW0: 6.4vw;
+  
+  --s-VW-1: 0.5vw;
+  --s-VW0: 1vw;
+  --s-VW1: 2vw;
+  --s-VW2: 2.25vw;
+  --s-VW3: 3vw;
+  --s-VW5: 5vw;
+  
+  --vw-bbl: 375px;
+  --vw-ubl: 1200px;
+
+  [dir=ltr]{
+    --ToDir: right; 
+  }
+  [dir=rtl]{
+    --ToDir: left;
+  }
+}
+
+
+
+$main-font: "Signika";
+$secondary-font: "Merriweather";
+$third-font: "The Seasons";
+$regular-font: Arial, sans-serif;
+
+
+// Green
+$cgreen-A100: hsl(157, 40%, 35%);
+$cgreen-A300: hsl(158, 36%, 28%);
+$cgreen-A500: hsl(157, 37%, 27%);
+$cgreen-A700: hsl(157, 38%, 22%);//#224C3C
+$cgreen-A900: hsl(155, 36%, 16%);
+// Orange
+$corange-A100: rgb(240, 224, 209);
+$corange-A200: hsl(32, 100%, 85%);
+$corange-A300: hsl(32, 53%, 77%);
+$corange-A400: hsl(32, 98%, 81%);
+$corange-A500: hsl(32, 97%, 75%);
+// Blue
+$cblue-A100: hsl(240, 100%, 75%);
+$cblue-A200: hsl(240, 100%, 63%);
+$cblue-A300: hsl(240, 100%, 50%);
+$cblue-A400: hsl(240, 100%, 37%);
+$cblue-A500: hsl(240, 100%, 25%);
+$soft-color: hsl(180, 3%, 94%);
+// Gray Scale
+$graySP-Z000: hsl(0, 0%, 100%);
+$graySP-A100: hsl(0, 0%, 98%);
+$graySP-A200: hsl(0, 0%, 80%);
+$graySP-A300: hsl(0, 0%, 67%);
+$graySP-A400: hsl(0, 0%, 50%);
+$graySP-A500: hsl(0, 0%, 39%);
+$graySP-A600: hsl(0, 0%, 27%);
+$graySP-A800: hsla(0, 0%, 11%, 0.69);
+$graySP-A900: hsla(0, 0%, 0%, 0.69);
+$graySP-G400: hsl(157, 3%, 46%);
+// Red
+$cred-Z000: hsl(4, 83%, 57%);
+// Gradient
+$main-gradient: linear-gradient(to var(--ToDir), $cgreen-A900, $cgreen-A700);
+$secondary-gradient: linear-gradient(to var(--ToDir), $corange-A500, $corange-A400, $corange-A200);
+
+
+/**/
+$main-inline-padding: max(8.7vw - var(--s-A2), var(--s-A2));
+$main-padding: var(--s-Z0) $main-inline-padding;
+$pad-v1: var(--s-A3) max(6vw - var(--s-A2), var(--s-A2));
+$section-padding: 2rem 5rem;
+$control-padding: var(--s-Z4);
+/**/
+/**/
+$f-Z4: (
+  fs: var(--s-Z4),
+  lh: var(--s-Z3),
+);
+$f-Z3: (
+  fs: var(--s-Z3),
+  lh: var(--s-Z2),
+);
+$f-Z2: (
+  fs: var(--s-Z2),
+  lh: var(--s-Z4),
+);
+$f-Z1: (
+  fs: var(--s-Z1),
+  lh: var(--s-Z0),
+);
+$f-Z0: (
+  fs: var(--s-Z0),
+  lh: var(--s-A2),
+);
+$f-A1: (
+  fs: var(--s-A1),
+  lh: var(--s-A3),
+);
+$f-A2: (
+  fs: var(--s-A2),
+  lh: var(--s-A4),
+);
+$f-A3: (
+  fs: var(--s-A3),
+  lh: var(--s-A5),
+);
+$f-A4: (
+  fs: var(--s-A4),
+  lh: var(--s-A8),
+);
+$f-A5: (
+  fs: var(--s-A5),
+  lh: var(--s-A9),
+);
+$f-A6: (
+  fs: var(--s-A6),
+  lh: var(--s-B1),
+);
+$f-A7: (
+  fs: var(--s-A7),
+  lh: var(--s-B2),
+);
+$f-A9: (
+  fs: var(--s-A9),
+  lh: var(--s-B3),
+);
+$f-B1: (
+  fs: var(--s-B1),
+  lh: var(--s-B4),
+);
+$f-B3: (
+  fs: var(--s-B3),
+  lh: var(--s-B5),
+);
+$f-B4: (
+  fs: var(--s-B4),
+  lh: var(--s-B6),
+);
+$f-B5: (
+  fs: var(--s-B5),
+  lh: var(--s-B5),
+);
+$f-X0: (
+  fs: var(--s-X0),
+  lh: var(--s-X0),
+);
+
+@mixin FontMixin($f-sizes) {
+  font-size: map-get($map: $f-sizes, $key: fs);
+  line-height: map-get($map: $f-sizes, $key: ls);
+}
+
+@mixin DynamicFontMixin($f-min, $dynamic-value, $f-max) {
+  font-size: clamp(
+    map-get($map: $f-min, $key: fs),
+    $dynamic-value,
+    map-get($map: $f-max, $key: fs)
+  );
+  line-height: clamp(
+    map-get($map: $f-min, $key: lh),
+    $dynamic-value,
+    map-get($map: $f-max, $key: lh)
+  );
+}
+
+
+
+
+// $bs-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px,
+// );

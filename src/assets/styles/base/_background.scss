@@ -1,0 +1,6 @@
+@use "../abstracts/variables" as *;
+
+body {
+  // background-color: linear-gradient(to right, hsl(156, 38%, 17%), hsl(157, 38%, 19%)) !important;
+  background-color: $graySP-Z000;
+}

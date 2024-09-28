@@ -1,0 +1,123 @@
+<app-card-shell>
+    <section class="container-fluid mainBody">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="form custom-rows v1">
+            <div class="row form-header v1 mb-0">
+                <h2>Register</h2>
+                <p class="mb-0">Already have an account? Try to <a [routerLink]="['/login']">Login</a></p>
+            </div>
+            <div class="row form-header v1">
+                <div class="line gray v1"></div>
+                <p>Register using your social account</p>
+                <div class="col-6 p-0 pe-1">
+                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-google-fill"></i> Google</button>
+                </div>
+                <div class="col-6 p-0 ps-1">
+                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-facebook-circle-fill"></i>
+                        Facebook</button>
+                </div>
+                <div class="line gray v1"></div>
+            </div>
+            <div class="row form-header v1 mb-0">
+                <p>Create Account</p>
+            </div>
+    
+            <div class="row">
+                <label for="first_name" class="label">First Name</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-id-card-fill"></i></span>
+                    <input type="text" id="first_name" class="field" formControlName="first_name"
+                        placeholder="Enter your first name..." aria-describedby="first_name">
+                </div>
+            </div>
+            <div class="row">
+                <label for="last_name" class="label">Last Name</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-id-card-fill"></i></span>
+                    <input type="text" id="last_name" class="field" formControlName="last_name"
+                        placeholder="Enter your last name..." aria-describedby="last_name">
+                </div>
+            </div>
+            <div class="row">
+                <label for="email" class="label">Email</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-mail-fill"></i></span>
+                    <input type="email" id="email" class="field" formControlName="email" placeholder="Enter your email..."
+                        aria-describedby="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="phoneNumber" class="label">Phone number</label>
+                    <div class="row">
+                        <div class="col-4 p-0 pe-1">
+                            <div class="control">
+                                <select name="code" id="code" class="field" formControlName="code">
+                                    <option [value]="null" disabled selected>Code</option>
+                                    <option value="+20">Egypt (+20)</option>
+                                    <option value="+1">Hello</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-8 p-0 ps-1">
+                            <div class="control">
+                                <input type="text" id="phoneNumber" class="field" formControlName="phone_number"
+                                    placeholder="Enter your phone number..." aria-describedby="phoneNumber">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="birthday" class="label">Birthday</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-cake-2-fill"></i></span>
+                    <input type="date" id="birthday" class="field" formControlName="birthday"
+                        placeholder="Enter your birthday..." aria-describedby="birthday">
+                </div>
+            </div>
+            <div class="row">
+                <label for="gender" class="label">Gender</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-men-line"></i></span>
+                    <select name="gender" id="gender" class="field defPad" formControlName="gender">
+                        <option [value]="null" disabled selected>Gender</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <label for="nationality" class="label">Nationality</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-flag-fill"></i></span>
+                    <select name="nationality" id="nationality" class="field defPad" formControlName="nationality">
+                        <option [value]="null" disabled selected>Nationality</option>
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <label for="password" class="label">Password</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
+                    <input type="{{hide ? 'password': 'text'}}" id="password" class="field" formControlName="password"
+                        placeholder="Enter your password..." aria-describedby="password">
+                    <span class="suffix main-color" (click)="hide=!hide"><i class="{{hide? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                </div>
+            </div>
+            <div class="row">
+                <label for="confirm_password" class="label">Confirm Password</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
+                    <input type="{{hide_confirm ? 'password': 'text'}}" id="confirm_password" class="field" formControlName="confirm_password"
+                        placeholder="Re-Enter your password..." aria-describedby="confirm_password">
+                    <span class="suffix main-color" (click)="hide_confirm=!hide_confirm"><i class="{{hide_confirm? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-A5 mx-auto" [disabled]="registerForm.invalid">Submit</button>
+            </div>
+        </form>
+    </section>
+</app-card-shell>

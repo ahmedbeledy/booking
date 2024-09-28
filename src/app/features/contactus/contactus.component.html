@@ -1,0 +1,103 @@
+<app-navbar [dark]="true"></app-navbar>
+<section class="mx-0 my-3">
+  <div class="row mx-0 contactus flex-md-row flex-column-reverse">
+    <div class="col-lg-4 col-md-6 col-12 left">
+      <div>
+        <h1 class="third-font">Contact Us</h1>
+        <p>Carmen amita defendo sodalitas cimentarius colo totam. Armarium cognomen nostrum</p>
+      </div>
+
+      <ul class="details">
+        <li>
+          <a class="d-flex"href="tel:+20 103 333 3431" aria-label="Phone">
+            <i class="ri-phone-line"></i>&nbsp;&nbsp;&nbsp;
+            <p>+20 103 333 3431</p>
+          </a>
+        </li>
+        <li>
+          <a  class="d-flex" href="mailto:info@lacasaresidence.com" aria-label="Email">
+            <i class="ri-mail-line"></i>&nbsp;&nbsp;&nbsp;
+            <p>info&#64;lacasaresidence.com</p>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex" href="https://maps.app.goo.gl/9KMM4PDZfbNfEmNS9" target="_blank" aria-label="Location">
+            <i class="ri-map-pin-line"></i>&nbsp;&nbsp;&nbsp;
+            <p>20 mohamed mandoor, Al Manteqah Al Oula, Nasr City, Cairo Governorate 4450113
+            </p>
+          </a>
+        </li>
+      </ul>
+
+
+      <ul class="social">
+        <li><a href="https://www.facebook.com/profile.php?id=61560530829848" target="_blank" aria-label="Facebook"><i
+              class="ri-facebook-circle-line"></i></a></li>
+        <li><a href="https://x.com/LacasaResidence?t=mkivKCEY7DgkgxDwxHBfZA&amp;s=09" target="_blank"
+            aria-label="Twitter"><i class="ri-twitter-x-line"></i></a></li>
+        <li><a href="https://www.instagram.com/lacasaresidence1?igsh=aTI4dHp0cnYzZ3R2" target="_blank"
+            aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=201033333431" target="_blank" aria-label="TikTok"><i
+              class="ri-whatsapp-line"></i></a></li>
+      </ul>
+    </div>
+    <div class="col-lg-8 col-md-6 col-12 right">
+      <form class="form">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <label for="name" class="label">Name</label>
+            <div class="control">
+              <span class="prefix main-color"><i class="fa-solid fa-address-card"></i></span>
+              <input type="text" id="name" class="field" placeholder="Enter your name..." aria-describedby="name">
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <label for="email" class="label">Email</label>
+            <div class="control">
+              <span class="prefix main-color"><i class="fa-duotone fa-envelope"></i></span>
+              <input type="email" id="email" class="field" placeholder="Enter your email..." aria-describedby="email">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mb-4">
+            <label for="phoneNumber" class="label">Phone number</label>
+            <div class="row">
+              <div class="col-4">
+                <div class="control">
+                  <select name="code" id="code" class="field">
+                    <option value="+20" selected>Egypt (+20)</option>
+                    <option value="+1">Hello</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="control">
+                  <input type="text" id="phoneNumber" class="field" placeholder="Enter your phone number..."
+                    aria-describedby="phoneNumber">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mb-4">
+            <label for="message" class="label">Message</label>
+            <div class="control">
+              <textarea name="message" id="message" class="field" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-row-reverse">
+          <div class="col-6">
+            <button type="submit" class="button primary w-100">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+</section>
+<app-footer></app-footer>

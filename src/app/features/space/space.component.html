@@ -1,0 +1,269 @@
+<app-navbar [dark]="true"></app-navbar>
+<section class="space-page container-fluid">
+    <div class="row banner-dev">
+        <div class="col-lg-7 col-md-6">
+            <div class="imgs-dev row">
+                <div class="imgs-preview col-lg-1 col-2 px-sm-3 px-0">
+                    <img src="/assets/img/beach.jpg" alt="beach">
+                    <img src="/assets/img/beach.jpg" alt="beach">
+                    <img src="/assets/img/beach.jpg" alt="beach">
+                    <img src="/assets/img/beach.jpg" alt="beach">
+                </div>
+                <div class="img-zoom col-lg-11 col-10 px-sm-3 px-0">
+                    <img src="/assets/img/beach.jpg" class="p-sm-0 p-1" alt="beach">
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-6">
+            <div class="info-dev">
+                @if (isLoading) {Loading...}
+                @if (!isLoading) {
+                <h5 class="space-title">{{space.name}}</h5>
+                <div class="loc-rate-group">
+                    <p class="info-text"><i class="ri-map-pin-line"></i><span class="pre">{{space.country}}</span></p>
+                    <p class="info-text"><i class="ri-star-fill star color-orange"></i><span
+                            class="pre">{{space.country}}{{space.review}}</span></p>
+                </div>
+                <div class="room-details">
+                    <p class="room-detail">{{space.rooms}} {{space.rooms >=2 ? "rooms": "Bedroom"}}</p>
+                    <p class="room-detail">{{space.beds}} {{space.beds >=2 ? "Beds": "Bed"}}</p>
+                    <p class="room-detail">{{space.bathrooms}} {{space.bathrooms >=2 ? "Bathrooms": "Bathrooms"}}</p>
+                </div>
+                <p class="price">{{space.price}}<span class="currency fw-300">EGP </span>
+                    @if (space.oldPrice) {
+                    <span class="old-price fw-500">{{space.oldPrice}}</span>
+                    }
+                </p>
+                <p class="taxes">Per Night
+                    @if (space.includeTaxes) {
+                    <span>- Includes taxes and fees</span>
+                    }
+                </p>
+                <p class="room-desc">{{space.description}}</p>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <button class="btn-set btn-green-outline with-radius f-A1-A2 main-font ">Check In</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-set btn-green-outline with-radius f-A1-A2 main-font ">Check Out</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn-set btn-green-gradient-sm with-radius w-100">Reserve</button>
+                    </div>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding">
+        <div class="row">
+            <div class="w-auto pe-0">
+                <i class="sec-icon ri-settings-3-line"></i>
+            </div>
+            <div class="col-10">
+                @if (isLoading) {Loading...}
+                @if(!isLoading){
+                <header class="sec-header">The Amenities</header>
+                <div class="amenities">
+                    @for (item of space.facilities; track $index) {
+                    <p class="amenity">{{item.name}}</p>
+                    }
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding ">
+        <div class="row">
+            <div class="w-auto pe-0">
+                <i class="sec-icon ri-map-pin-line"></i>
+            </div>
+            <div class="col-md-5 col-10">
+                <header class="sec-header">Zamalek Mohammed Thakeb Street, Cairo</header>
+                <header class="sec-subheader mt-1">About Zamalek</header>
+                <p class="sec-text">An authentic Island surrounded by the Nile River. One of Cairo’s most secure and
+                    most warm neighborhoods where you can safely enjoy a peaceful walk at any time. Here, you can easily
+                    entertain yourself with different activities and unique experiences around the area. Zamalek is
+                    accessible by all transportation methods round the clock.</p>
+            </div>
+            <div class="col-md-6 col-12">
+                <app-map></app-map>
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding ">
+        <div class="row">
+            <div class="w-auto pe-0">
+                <i class="sec-icon ri-sticky-note-line"></i>
+            </div>
+            <div class="col-10">
+                <header class="sec-header">Notes</header>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                        <div class="note-card">
+                            <div class="note-icon">
+                                <img class="w-100" src="/assets/img/icons/icon1.svg" alt="">
+                            </div>
+                            <header class="note-header">Checkin & Checkout</header>
+                            <p class="note-text">
+                                Check-in is at 03:00 pm Checkout is at 11:00 am You may request early check-in and/or
+                                late check-out after booking. Our team will do our best to accommodate any requests
+                                based on availability.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                        <div class="note-card">
+                            <div class="note-icon">
+                                <img class="w-100" src="/assets/img/icons/icon2.svg" alt="">
+                            </div>
+                            <header class="note-header">Parking</header>
+                            <p class="note-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                        <div class="note-card">
+                            <div class="note-icon">
+                                <img class="w-100" src="/assets/img/icons/icon3.svg" alt="">
+                            </div>
+                            <header class="note-header">Accessability</header>
+                            <p class="note-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-0">
+                        <div class="note-card">
+                            <div class="note-icon">
+                                <img class="w-100" src="/assets/img/icons/icon4.svg" alt="">
+                            </div>
+                            <header class="note-header">Breaking house rules</header>
+                            <p class="note-text">
+                                Breaking any of the mentioned house rules may lead to consequences up to premises
+                                evacuation with no refund.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding">
+        <div class="row">
+            <div class="rule-card">
+                <header class="rule-header">House Rules</header>
+                <ul class="rules-list">
+                    <li>
+                        A Rental Agreement document will be sent via email to be signed electronically by yourself.
+                    </li>
+                    <li>
+                        Following the Egyptian law, if any of a couple is Egyptian or Arab, they must submit an official
+                        marriage proof “Orfi” or any unofficial documents are not allowed.
+                    </li>
+                    <li>
+                        Events are not allowed.
+                    </li>
+                    <li>
+                        Smoking is not allowed.
+                    </li>
+                    <li>
+                        Pets are not allowed.
+                    </li>
+                    <li>
+                        Respect the noise curfew for everyone’s peace.
+                    </li>
+                    <li>
+                        Stick to check-in and check-out times - punctuality is our superpower.
+                    </li>
+                    <li>
+                        Oops moments happen; just be aware that serious damages may dip into the security deposit.
+                    </li>
+                    <li>
+                        We’ve carefully arranged the furniture, so please no impromptu redecorating.
+                    </li>
+                    <li>
+                        Perfect for toddlers and kids under 12 - let the fun begin!
+                    </li>
+                    <li>
+                        Keep it legal - no illegal substances allowed.
+                    </li>
+                    <li>
+                        Let’s keep it safe and sound.
+                    </li>
+                    <li>
+                        Only registered guests can join the party - no gatecrashers (AKA visitors), please.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding">
+        <div class="row">
+            <div class="rule-card">
+                <header class="rule-header">Cancellation & Refund Policy</header>
+                <ul class="rules-list noSpacing">
+                    <li>
+                        We offer a full refund up to 5 nights before the check-in date.
+                    </li>
+                    <li>
+                        Canceling before arriving by 4 nights or less will result in 50% of all unspent nights plus 1
+                        full night.
+                    </li>
+                    <li>
+                        Modifying the checkoutdate during the stay will result in how many nights are left then the
+                        above policy will get applied.
+                    </li>
+                    <li>
+                        Extra charges may apply such as transfer fees & taxes.
+                    </li>
+                </ul>
+                <p class="rules-text">
+                    The first night is calculated at the check-in time, and the rest of the nights are calculated
+                    starting at 00:00 AM of each day.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section-dev padding-set main-padding">
+        <div class="row">
+            <div class="rule-card">
+                <header class="rule-header">Violations</header>
+                <ul class="rules-list">
+                    <li>
+                        In the event that you engage in activities that violate our policies during your stay with us,
+                        we
+                        reserve the right to charge your credit card for any resulting damages, losses, or expenses
+                        incurred
+                        by the property manager.
+                    </li>
+                    <li>
+                        Such activities may include but are not limited to, smoking in
+                        non-smoking areas, causing damage to the space, missing items in the space, and violating any of
+                        our
+                        mentioned house rules.
+                    </li>
+                    <li>
+                        You will be notified of any such charges via email within 48 hours of your
+                        checkout.
+                    </li>
+                    <li>
+                        If you wish to dispute any charges, please contact us within seven (7) days of receiving
+                        the notification.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

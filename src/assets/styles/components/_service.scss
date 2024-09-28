@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as *;
+
+.bg-eclipse {
+  position: relative;
+  z-index: 1;
+  // margin-bottom: 4.9%;
+  overflow: hidden;
+
+  &::before, 
+  &::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 80%;
+    left: -10%;
+    z-index: -1;
+    border-top-left-radius: 100vw 100%;
+  }
+
+  &::before {
+    bottom: 0;
+    background: $main-gradient;
+  }
+  &::after {
+    bottom: -10%;
+    background: transparent;
+    $border: 4rem solid $corange-A500;
+    border-left: $border;
+    border-top: $border;
+  }
+}
+
+.icon-circle {
+  text-align-last: end;
+}
+
+

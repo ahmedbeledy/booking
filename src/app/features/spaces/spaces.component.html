@@ -1,0 +1,76 @@
+<app-navbar [dark]="true"></app-navbar>
+<section class="container my-3">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-icon matIconPrefix>location_on</mat-icon>
+                <mat-select #select id="selectArea" placeholder="Select Area" [(ngModel)]="queryParams.area">
+                    <mat-option selected="" [value]="">Select Area</mat-option>
+                    @for (area of areas; track area) {
+                    <mat-option [value]="area.id">{{area.name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <input matInput [(ngModel)]="queryParams.duration" placeholder="Duration" [matDatepicker]="picker1">
+                <mat-datepicker-toggle matIconPrefix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-datepicker-toggle matIconSuffix [for]="picker1">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-icon matIconPrefix>group</mat-icon>
+                <span>Guests</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.guests" placeholder="Guests" type="number">
+                <div matSuffix class="greater-width px-3">
+                    <app-custom-input-number [(value)]="queryParams.guests"></app-custom-input-number>
+                </div>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-icon matIconPrefix>bathroom</mat-icon>
+                <span>Bathrooms</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.bathrooms" placeholder="Bathrooms" type="number">
+                <div matSuffix class="greater-width px-3">
+                    <app-custom-input-number [(value)]="queryParams.bathrooms"></app-custom-input-number>
+                </div>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-icon matIconPrefix>bed</mat-icon>
+                <span>Beds</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.beds" placeholder="Beds" type="number">
+                <div matSuffix class="greater-width px-3">
+                    <app-custom-input-number [(value)]="queryParams.beds"></app-custom-input-number>
+                </div>
+            </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <button (click)="onSearch()" type="submit" class="btn-set btn-green-dark-sm with-radius">Search</button>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6 map overflow-y-scroll scrollbar-hidden">
+            <div *ngFor="let item of displayedSpaces" class="col-12">
+                <app-place-card [id]="item.id" [onMapHover]="item.onMapHover" [routeTo]="'/space/'+item.id" orientation="Horz" [name]="item.name" [country]="item.country"
+                    [facilities]="item.facilities" [includeTaxes]="item.includeTaxes" [latestPrice]="item.price"
+                    [review]="item.review" [oldPrice]="item.oldPrice"></app-place-card>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="sticky-top map">
+                <app-map></app-map>
+            </div>
+        </div>
+    </div>
+
+</section>
+<app-footer></app-footer>

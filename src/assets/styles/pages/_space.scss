@@ -1,0 +1,188 @@
+@use "../abstracts/variables" as *;
+
+.space-page {
+  margin-block: var(--s-A1);
+  .banner-dev {
+    :is(.imgs-dev, .info-dev) {
+      padding-block: var(--s-A4);
+    }
+    .imgs-dev {
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 60%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $cgreen-A700;
+        border-radius: 0rem var(--s-Z6) var(--s-Z6) 0rem;
+      }
+      .imgs-preview {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+          width: var(--s-B4);
+          margin: clamp(var(--s-Z7), var(--s-VW1), var(--s-Z2));
+          border-radius: var(--s-Z7);
+        }
+      }
+      .img-zoom {
+        img {
+          width: 100%;
+          max-width: var(--s-X9);
+          max-height: var(--s-X8);
+          object-fit: cover;
+          border-radius: var(--s-Z2);
+        }
+      }
+    }
+    .info-dev {
+      font-family: $main-font;
+      :is(.loc-rate-group, .room-details) {
+        display: flex;
+        gap: clamp(var(--s-Z7), var(--s-VW1), var(--s-Z2));
+        font-weight: 300;
+      }
+      .space-title {
+        @include DynamicFontMixin($f-A7, var(--s-VW1), $f-A9);
+      }
+      .loc-rate-group {
+        @include DynamicFontMixin($f-A1, var(--s-VW1), $f-A3);
+      }
+      .room-details {
+        @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+        color: $graySP-A500;
+        .room-detail {
+          background-color: hsl(0, 0%, 95%);
+          padding: var(--s-Z8) var(--s-Z5);
+          border-radius: var(--s-Z6);
+        }
+      }
+      .price {
+        color: $cgreen-A700;
+        @include DynamicFontMixin($f-A7, var(--s-VW1), $f-B1);
+        margin-bottom: 0rem;
+        :is(.currency, .old-price) {
+          color: black;
+        }
+        .currency {
+          @include DynamicFontMixin($f-Z1, var(--s-VW1), $f-A1);
+        }
+        .old-price {
+          @include DynamicFontMixin($f-A2, var(--s-VW1), $f-A4);
+          position: relative;
+          top: calc(-1 * var(--s-Z8));
+          padding-inline: var(--s-Z5);
+          text-decoration: line-through;
+          text-decoration-thickness: var(--s-Z9);
+        }
+      }
+      .taxes {
+        @include DynamicFontMixin($f-A2, var(--s-VW1), $f-A4);
+        color: $graySP-A200;
+        font-weight: 300;
+      }
+      .room-desc {
+        @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+        color: $graySP-A500;
+        font-weight: 300;
+      }
+    }
+  }
+  .section-dev {
+    font-style: $main-font;
+    margin-block: var(--s-A2);
+    :is(.sec-header, .sec-icon) {
+      @include DynamicFontMixin($f-A7, var(--s-VW1), $f-A9);
+    }
+    :is(.sec-header, .sec-subheader) {
+      margin-bottom: var(--s-Z6);
+    }
+    .sec-icon {
+      color: $corange-A500;
+    }
+    .sec-header {
+      font-weight: 600;
+    }
+    .sec-subheader {
+      @include DynamicFontMixin($f-A2, var(--s-VW1), $f-A4);
+    }
+    .sec-text {
+      @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+      color: $graySP-A500;
+      font-weight: 300;
+    }
+    .amenities {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: clamp(var(--s-Z4), var(--s-VW1), var(--s-Z2));
+      .amenity {
+        @include DynamicFontMixin($f-A2, var(--s-VW1), $f-A4);
+        color: $cgreen-A700;
+        font-weight: 300;
+        background-color: hsl(0, 0%, 95%);
+        padding: var(--s-Z7) var(--s-Z4);
+        border-radius: var(--s-Z6);
+
+        margin-bottom: 0rem;
+      }
+    }
+    .note-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $cgreen-A700;
+      color: white;
+      border-radius: var(--s-Z3);
+      padding: var(--s-A4) clamp(var(--s-Z0), var(--s-VW1), var(--s-A4));
+      min-height: var(--vw-bbl);
+      .note-icon {
+        width: 30%;
+        margin-bottom: var(--s-Z6);
+      }
+      .note-header {
+        @include DynamicFontMixin($f-A2, var(--s-VW1), $f-A4);
+        margin-bottom: var(--s-Z6);
+        font-weight: 600;
+      }
+      .note-text {
+        @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+        text-align: center;
+        font-weight: 100;
+      }
+    }
+    .rule-card {
+      background-color: hsl(0, 0%, 95%);
+      padding: var(--s-B5) clamp(var(--s-A1), var(--s-VW5), var(--s-X0));
+      border-radius: var(--s-Z3);
+      .rule-header {
+        @include DynamicFontMixin($f-A7, var(--s-VW1), $f-A9);
+        color: $cgreen-A700;
+        margin-bottom: var(--s-A2);
+      }
+      :is(.rules-list, .rules-text){
+        @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+        font-weight: 300;
+      }
+      .rules-list {
+        list-style: none;
+        padding-left: 0;
+        &:not(.noSpacing){
+          li{
+            margin-bottom: var(--s-A1);
+          }
+        }
+        li {
+          &::before{
+            content: "- ";
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export type _INullable<T> = {[key in keyof T]: T[key] | null}

@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as *;
+
+.cards-set {
+  &.card-v1 {
+    border: none !important;
+    background: transparent !important;
+    position: relative;
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      height: max-content;
+      max-height: 500px;
+      &:focus-visible {
+        border-color: transparent;
+      }
+    }
+
+    img {
+      width: 100%;
+      // height: 100%;
+      border-radius: 10px;
+      opacity: inherit;
+    }
+
+    .mainBody {
+      position: absolute;
+      color: $graySP-Z000;
+      padding: clamp(var(--s-A1), 1vw, var(--s-A9))
+        clamp(var(--s-A1), 5vw, var(--s-B6));
+      align-content: center;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        transparent
+      );
+    }
+  }
+
+  &.card-v2 {
+    max-width: max-content;
+    margin-inline: auto;
+    padding: var(--s-A9) var(--s-A5);
+  }
+
+  &.card-v3 {
+    border: none !important;
+    background: linear-gradient(to var(--ToDir), hsla(0, 0%, 0%, 0.5), transparent)
+        left no-repeat,
+      url("/assets/img/chair-table-dinning-beach-sea-with-blue-sky.png") center
+        no-repeat;
+    background-size: cover, cover;
+    border-radius: 10px;
+    width: 100%;
+    height: 482px;
+
+    display: flex;
+    align-items: center;
+
+    .mainBody {
+      width: 100%;
+      padding: clamp(var(--s-A1), 1vw, var(--s-A9))
+        clamp(var(--s-A1), 5vw, var(--s-B6));
+    }
+  }
+}

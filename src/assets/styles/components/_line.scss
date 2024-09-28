@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as *;
+
+.line {
+  &:is(.colored, .gray) {
+    &.v1 {
+      height: 1px;
+      width: 100%;
+      padding-inline: 0px;
+      margin-inline: 0px;
+    }
+  }
+  &.colored {
+    &.v1 {
+      background-color: #34785f;
+    }
+  }
+
+  &.gray {
+    &.v1 {
+      background-color: $graySP-A300;
+      margin-block: var(--s-Z2);
+    }
+  }
+}

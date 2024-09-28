@@ -1,0 +1,33 @@
+<div class="place-card {{orientation}}" [ngClass]="{'row': orientation =='Horz', onMapHover}">
+    <a [ngClass]="{'col-6 ps-0': orientation =='Horz'}" routerLink="{{routeTo}}">
+        <img src="{{imageURL}}" class="card-img-top" alt="...">
+    </a>
+    <div [ngClass]="{'col-6 px-1': orientation =='Horz'}" class="card-body">
+        <a routerLink="{{routeTo}}">
+            <h5 class="card-title">{{name}}</h5>
+        </a>
+        <div class="loc-rate-group">
+            <p class="card-text"><i class="ri-map-pin-line"></i><span class="pre">{{country}}</span></p>
+            <p class="card-text"><i class="ri-star-fill star color-orange"></i><span class="pre">{{review}}</span></p>
+        </div>
+        <ng-container *ngIf="orientation ==='Horz'">
+            <div class="room-details">
+                <p class="room-detail">{{rooms == null ? "0" : rooms}} {{rooms >=2 ? "rooms": "Bedroom"}}</p>
+                <p class="room-detail">{{beds == null ? "0" : beds}} {{beds >=2 ? "Beds": "Bed"}}</p>
+                <p class="room-detail">{{bathrooms == null ? "0" : bathrooms}} {{bathrooms >=2 ? "Bathrooms": "Bathrooms"}}</p>
+            </div>
+            <ng-container *ngIf="facilities">
+                <div class=" facilities">
+                    <span *ngFor="let item of facilities">{{item.name}}</span>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <p class="price">{{latestPrice}}<span class="currency fw-300">EGP </span>
+            <ng-container *ngIf="oldPrice">
+                <span class="old-price fw-500">{{oldPrice}}</span>
+            </ng-container>
+        </p>
+        <p *ngIf="includeTaxes" class="card-text">Includes taxes and fees</p>
+    </div>
+</div>

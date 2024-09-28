@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+
+.banner {
+  margin-block:  clamp(var(--s-B6), 7vw,var(--s-X0)) ;
+
+  & > .row {
+    & > * {
+      padding-inline: clamp(var(--s-Z7), 2vw, var(--s-Z6));
+    }
+  }
+  .header {
+    @include DynamicFontMixin($f-B5, var(--s-DVW0), $f-X0);
+    font-family: $third-font;
+    text-align: center;
+    color: $graySP-Z000;
+  }
+  .subtitle{
+    @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A4);
+    margin-bottom: clamp(var(--s-Z7), 2vw, var(--s-Z6));
+    &+*{
+      margin-top: clamp(var(--s-Z7), 2vw, var(--s-Z6));
+    }
+  }
+  .banner-label{
+    @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+  }
+}

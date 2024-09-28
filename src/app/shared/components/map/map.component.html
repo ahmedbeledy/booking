@@ -1,0 +1,14 @@
+<div class="map">
+    <google-map height="100%" width="100%" [options]="options">
+        @if (markers && markers.length > 0) {
+        @for (marker of markers; track $index) {
+        <map-marker [position]="marker.position" [label]="marker.label" [icon]="marker.icon"
+            (mapMouseover)="onMarkerHover(marker)" (mapMouseout)="onMarkerMouseOut(marker)">
+            <div class="custom-marker">
+                {{ marker.label }}
+            </div>
+        </map-marker>
+        }
+        }
+    </google-map>
+</div>

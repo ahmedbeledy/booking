@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as *;
+
+.contactus {
+  .left {
+    color: white;
+    background-color: $cgreen-A900;
+    padding-inline: 6% 3rem;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+
+    >:is(div, ul){
+        margin-block: 4rem;
+    }
+
+    h1{
+        margin-bottom: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        color: $soft-color;
+        opacity: 0.8;
+      }
+    }
+
+    p {
+      color: $soft-color;
+    }
+
+    :is(.details, .social) {
+      li {
+        i {
+          display: grid;
+          place-items: center;
+          font-size: 1.25rem;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+
+    .details {
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-block: 0.5rem;
+        i {
+          background-color: $cgreen-A100;
+          border-radius: 0.5rem;
+          
+          height: 2rem;
+        }
+        p {
+          margin-bottom: 0;
+          width: 300px;
+        }
+      }
+    }
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        i {
+
+          background-color: $cgreen-A700;
+          border-radius: 50%;
+                      
+          height: 2.25rem;
+        }
+      }
+    }
+  }
+  .right{
+    padding-inline: 3rem 6%;
+    padding-block: 4rem;
+  }
+}

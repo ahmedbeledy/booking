@@ -1,0 +1,55 @@
+.newsletter {
+  .input-group {
+    position: relative;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .form-control.with-icon {
+    padding-right: 30px;
+  }
+
+  .has-search .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    line-height: 3rem;
+    text-align: center;
+    pointer-events: none;
+    color: #1c3e31;
+  }
+
+  label {
+    width: 60%;
+    color: white;
+  }
+
+  .heading {
+    color: #fdc381 !important;
+  }
+
+  .text {
+    color: #8f8f8f !important;
+  }
+
+  .padding {
+    padding: 3vw 0rem;
+  }
+
+  .form-control {
+    width: 180%;
+    height: 50px;
+  }
+}

@@ -1,0 +1,85 @@
+@use "../abstracts/variables" as *;
+
+.section-v1 {
+  // background-color: $graySP-A900;
+  color: $graySP-Z000;
+  font-family: $regular-font;
+
+  .section-header {
+    position: relative;
+
+    width: 100%;
+    margin-top: 3rem;
+    text-align-last: center;
+
+    display: grid;
+
+    &._3cols-v1{
+      grid-template-columns: max-content auto max-content;
+    }
+
+    &._3cols-v2{
+      grid-template-columns: 1fr max-content 1fr;
+    }
+
+    h2 {
+      // font-size: 2.5rem;
+      font-weight: bold;
+      color: $corange-A500;
+      display: inline-block;
+      margin-bottom: 0px;
+    }
+
+    .header-btn {
+      display: grid;
+      place-items: center;
+    }
+
+    .header-line{
+      position: relative;
+      align-items: center;
+      margin-inline: 1rem;
+      .line1,
+      .line2 {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        // background-color: $cgreen-A300;
+        border-top: 2px solid $cgreen-A300;
+      }
+  
+      .line1 {
+        top: 15%;
+      }
+      .line2 {
+        top: 22%;
+      }
+    }
+  }
+
+  .section-subtitle{
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: $graySP-G400;
+    }
+  }
+
+  .price {
+    color: $corange-A500;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: $graySP-Z000;
+  }
+
+  .currency {
+    color: $graySP-Z000;
+    font-size: small;
+  }
+
+  
+}

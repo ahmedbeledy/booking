@@ -1,0 +1,14 @@
+@use "../abstracts/variables" as *;
+
+.icon {
+  border-radius: 50%;
+  color: $cgreen-A700;
+  background-color: $corange-A300;
+  padding: 10px;
+  font-size: max(1.1rem, 2.34vw);//2.2rem
+  cursor: pointer;
+  &:hover {
+    color: $corange-A300;
+    background-color: $cgreen-A700;
+  }
+}

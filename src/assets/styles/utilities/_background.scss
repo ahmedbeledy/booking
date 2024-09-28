@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+
+.bg-dark {
+  background-color: $graySP-A900 !important;
+  color: $graySP-Z000;
+}
+
+.main-background {
+  background: $main-gradient !important;
+  color: $graySP-Z000 !important;
+  &.toBottom{
+  background: linear-gradient(to bottom, $cgreen-A900, $cgreen-A700) !important;
+  }
+  &.toTop{
+    background: linear-gradient(to top, $cgreen-A900, $cgreen-A700) !important;
+  }
+}
+
+.bg-image{
+  background-color: hsl(157, 37%, 27%);
+  background-image: url("/assets/img/BG-Full@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  // background-origin: border-box;
+}
+
+
+.gradient-shadow{
+  background: linear-gradient(to bottom, transparent, $graySP-A900);
+}

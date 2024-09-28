@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as *;
+
+.main-font {
+  font-family: $main-font !important;
+}
+
+.secondary-font {
+  font-family: $secondary-font;
+}
+
+.third-font {
+  font-family: $third-font;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.letter-spacing-0 {
+  letter-spacing: 0px;
+}
+
+.line-height-9vw {
+  line-height: 9vw;
+}
+
+.font-sets {
+  &.f-S0 {
+    @extend .main-font;
+    @extend .letter-spacing-0;
+
+    color: $graySP-Z000;
+    &.f-0 {
+      @include DynamicFontMixin($f-A4, var(--s-VW3), $f-B4);
+    }
+    &.f-1 {
+      @include DynamicFontMixin($f-Z0, var(--s-VW2), $f-A3);
+    }
+    &.f-2{
+      @include FontMixin($f-A1);
+    }
+  }
+}

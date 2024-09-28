@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as *;
+
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// hue. Available color palettes: https://material.io/design/color/
+$LacasaR-primary: mat.define-palette(mat.$green-palette, 700, 800, 900);
+$LacasaR-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$LacasaR-warn: mat.define-palette(mat.$red-palette);
+
+$LacasaR-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $LacasaR-primary,
+      accent: $LacasaR-accent,
+      warn: $LacasaR-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($LacasaR-theme);
+
+.mat-typography {
+  // background-image: linear-gradient(to right, #1b3c2f, #1e4335) !important;
+  // background-color: $cgreen-A700;
+  font-family: "Signika" !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: $soft-color;
+  overflow: hidden;
+}
+
+.mat-icon,
+.mdc-icon-button,
+.mat-mdc-icon-button,
+.mat-unthemed,
+.mat-datepicker-toggle-default-icon
+{
+  color: $cgreen-A700;
+  fill: $cgreen-A700;
+}
+.mat-mdc-form-field-icon-suffix:has(.greater-width){
+  width: max-content;
+}

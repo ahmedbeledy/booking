@@ -1,0 +1,7 @@
+<section class="aboutus-card">
+    <div class="img">
+        <img [src]="img? img: imgDummy">
+    </div>
+    <header>{{header}}</header>
+    <ng-content select=".paragraph"></ng-content>
+</section>

@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as *;
+
+.color-light {
+  color: $graySP-Z000;
+}
+
+.main-color {
+  color: $cgreen-A700;
+}
+
+.color-main-gray {
+  color: $graySP-A300 !important;
+}
+
+.color-orange {
+  color: $corange-A500;
+}

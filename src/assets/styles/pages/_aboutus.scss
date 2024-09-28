@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as *;
+
+.aboutus-header {
+  height: 400px;
+  background: linear-gradient(
+    to right,
+    $cgreen-A700 0% 40%,
+    transparent 40% 80%,
+    $cgreen-A700 40% 100%
+  );
+  > div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    .left,
+    .right {
+      grid-row: 1/2;
+    }
+    .left {
+      background: url("/assets/img/beach.jpg") no-repeat center / cover;
+      grid-column: 2/8;
+      border-radius: 0.5rem;
+    }
+    .right {
+      align-content: center;
+      grid-column: 7/9;
+      .aboutus-title {
+        font-family: $third-font;
+        font-size: clamp(5rem, calc(10.05vw - 0.25rem), 7rem);
+        color: $cgreen-A700;
+        font-weight: 600;
+        margin-inline-start: clamp(0.5rem, calc(5.05vw - 2.5rem), 2.5rem);
+      }
+    }
+  }
+}
+
+.aboutus-section {
+  padding: $section-padding;
+  margin-inline: auto !important;
+  header {
+    font-size: 3.5rem;
+  }
+  p {
+    color: $graySP-A600;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+}
+
+.aboutus-video {
+  position: relative;
+  z-index: 1;
+  height: calc(10vw + 450px);
+  background: $main-gradient;//linear-gradient(to bottom, transparent 0% 30%, $cgreen-A700 30%);
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    background-color: $graySP-Z000;
+    z-index: -1;
+  }
+}

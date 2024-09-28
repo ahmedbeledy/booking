@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+
+.margindata {
+  margin-top: 1.8vw;
+  margin-right: 3vw;
+}
+
+.mb-41px {
+  margin-bottom: 41px;
+}
+
+.margin-set{
+  --margin: var(--s-Z0);
+  &.m-v1{
+    margin: var(--margin);
+  }
+
+  &.m-v2{
+    margin-block: var(--margin);
+  }
+}

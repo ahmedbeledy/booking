@@ -1,0 +1,24 @@
+<div class="padding-set main-padding section-v1 mb-41px d-flex flex-column">
+  <div class="section-header _3cols-v1">
+    <div class="w-auto position-relative">
+      <h2 class="font-sets f-S0 f-0">Trending</h2>
+    </div>
+    <div class="w-auto header-line">
+      <hr class="line1">
+      <hr class="line2">
+    </div>
+    <div class="w-auto header-btn">
+      <a routerLink="/" class="btn-set btn-orange-outline">See More</a>
+    </div>
+  </div>
+  <div class="row section-subtitle">
+    <p class="font-sets f-S0 f-1">Sint explicabo totam. Odit eos aliquid. Cumque sequi totam praesentium ipsum.</p>
+  </div>
+  <div class="row m-0 justify-content-center">
+    <div *ngFor="let item of trendingPlaces" class="col-lg-3 col-sm-6 col-12 mb-2 mb-md-0">
+      <app-place-card  [imageURL]="item.imageURL[0]" [name]="item.name" [country]="item.country" [includeTaxes]="item.includeTaxes"
+        [latestPrice]="item.price" [review]="item.review" [oldPrice]="item.oldPrice"></app-place-card>
+    </div>
+  </div>
+
+</div>

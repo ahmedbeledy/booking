@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+
+.main-background.z-1 {
+  padding-top: 92px;
+}
+
+
+.padding-set {
+  --top-padding: var(--s-Z0);
+  --bottom-padding: var(--s-Z0);
+  --block-padding: var(--top-padding) var(--bottom-padding);
+  --right-padding: var(--s-Z0);
+  --left-padding: var(--s-Z0);
+  --inline-padding: var(--right-padding) var(--left-padding);
+  --padding: var(--block-padding) var(--inline-padding);
+
+  padding: var(--padding);
+
+  &.main-padding{
+    --padding: #{$main-padding};
+  }
+
+  &.pad-v1{
+    --padding: #{$pad-v1};
+  }  
+
+  &.pad-v2{
+    --block-padding: var(--s-A2);
+    --inline-padding: var(--s-A7);
+  }
+}
+
+.padding-40px{
+  padding: 40px;
+}
+
+.pe-6rem{
+  padding-inline-end: 6rem !important;
+}
+
+
+.pe-4rem{
+  padding-inline-end: 4rem !important;
+}

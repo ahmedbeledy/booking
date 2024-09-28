@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.service-card {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  transition: background-size 0.25s;
+  &:hover {
+    background-size: 115% 115%;
+  }
+  &.defBG {
+    background-image: url("/assets/img/IMG_3207.jpeg");
+  }
+
+  .title {
+    @include FontMixin($f-A7);
+  }
+  .paragraph {
+    @include FontMixin($f-A1);
+  }
+}

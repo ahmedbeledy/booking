@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+
+.native-navbar {
+  // background: transparent !important;
+  // padding: 1vw 6vw !important;
+  padding: clamp(var(--s-Z4), 1vw, var(--s-Z0)) $main-inline-padding;
+
+  .nav-list {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style: none;
+    padding-left: 0rem;
+    margin-bottom: 0rem;
+    .nav-item {
+      font-size: clamp(var(--s-A1), 2vw, var(--s-A2));
+      margin-inline: 1vw;
+    }
+  }
+
+  mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+    margin-bottom: -6px;
+    margin-right: 5px;
+  }
+
+  .logo {
+    img {
+      width: clamp(var(--s-X1), 14.2vw, var(--s-X2));
+    }
+  }
+
+  &.navbar-light {
+    a {
+      color: #ffffff;
+      &:hover {
+        color: #e4c7a6;
+      }
+    }
+  }
+  &.navbar-dark {
+    a {
+      color: black;
+      &:hover {
+        color: #e4c7a6;
+      }
+    }
+  }
+}
+
+.menu-list {
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    .menu-link {
+      padding-inline: var(--s-Z4);
+      color: black;
+      &:hover {
+        color: #e4c7a6;
+      }
+    }
+    a {
+      text-decoration: none;
+      padding: 6px;
+      margin: 5px;
+    }
+  }
+}

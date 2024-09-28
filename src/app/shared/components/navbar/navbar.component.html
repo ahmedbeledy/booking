@@ -1,0 +1,58 @@
+<nav class="native-navbar" [ngClass]="{'navbar-light': !dark, 'navbar-dark': dark}">
+  <div class="row flex-nowrap justify-content-between align-items-center w-100">
+
+    <div class="col-md-2 col-5">
+      <!-- Logo -->
+      <a class="logo">
+        <img src="{{dark? logoColored : logoLight}}" alt="MDB Logo" loading="lazy" />
+      </a>
+    </div>
+
+    <div class="col-md-7 col">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/">{{"keywords.Home" | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/spaces">{{"keywords.Spaces" | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/aboutus">{{"keywords.AboutUs" | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contactus">{{"keywords.ContactUs" | translate}}</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="col-md-3 col-7 d-flex align-items-center justify-content-center gap-2 px-0">
+      <div>
+        <a routerLink="/login" class="btn-set btn-orange-light-md with-radius rad-Z7">
+          <i class="ri-contract-right-line"></i>
+          {{"actions.SignIn"| translate}} </a>
+      </div>
+      <div>
+        <button [matMenuTriggerFor]="menu2" class="btn-set btn-green-sm with-radius rad-Z9">
+          <i class="ri-align-justify"></i>
+        </button>
+        <mat-menu #menu2="matMenu" class="m-1" xPosition="before">
+          <div class="menu-list">
+            <div class="menu-links">
+              <a class="menu-link" routerLink="/">{{"keywords.Home" | translate}}</a>
+              <a class="menu-link" routerLink="/spaces">{{"keywords.Spaces" | translate}}</a>
+              <a class="menu-link" routerLink="/aboutus">{{"keywords.AboutUs" | translate}}</a>
+              <a class="menu-link" routerLink="/contactus">{{"keywords.ContactUs" | translate}}</a>
+            </div>
+          </div>
+        </mat-menu>
+      </div>
+      <div>
+        <button (click)="onLangChange()" class="btn-set btn-green-sm with-radius rad-Z9">
+          {{nextLang}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+</nav>

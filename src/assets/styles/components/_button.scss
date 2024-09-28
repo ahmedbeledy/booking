@@ -1,0 +1,212 @@
+@use "../abstracts/variables" as *;
+
+.btn-set {
+  cursor: pointer;
+
+  &:is(a) {
+    display: block;
+    text-decoration: none;
+  }
+
+  &:is(button) {
+    border: none;
+  }
+
+  &.with-radius {
+    --radius: var(--s-Z6);
+    border-radius: var(--radius);
+    &.rad-Z7 {
+      --radius: var(--s-Z7);
+    }
+    &.rad-Z9 {
+      --radius: var(--s-Z9);
+    }
+  }
+
+  &:is(.btn-green-gradient-lg, .btn-green-gradient-md, .btn-green-gradient-sm) {
+    background: linear-gradient(to right, $cgreen-A700, $cgreen-A900);
+    color: $corange-A300;
+    &:hover {
+      color: $graySP-A300;
+    }
+  }
+
+  &:is(.btn-orange-gradient-lg, .btn-orange-light-md) {
+    color: $cgreen-A700 !important;
+    &:hover {
+      background: $corange-A200 !important;
+    }
+  }
+
+  &:is(.btn-green-sm) {
+    background-color: $cgreen-A500;
+    color: $corange-A300;
+    &:is(:hover, :focus, :active) {
+      background-color: $corange-A300;
+      color: $cgreen-A500;
+    }
+  }
+
+  &:is(.btn-green-outline, .btn-link, .btn-blue-outline, .btn-red-outline) {
+    background-color: transparent;
+    &:hover {
+      color: $graySP-Z000;
+    }
+  }
+
+  &:is(.btn-green-dark-sm, .btn-green-dark-md) {
+    background: $cgreen-A700;
+    color: $graySP-Z000;
+    &:hover {
+      background: $cgreen-A300;
+    }
+  }
+
+  &:is(.btn-green-gradient-lg, .btn-orange-gradient-lg) {
+    @include DynamicFontMixin($f-A2, var(--s-VW2), $f-A6);
+    padding-block: clamp(var(--s-Z2), var(--s-VW2), var(--s-A1));
+  }
+
+  &:is(
+      .btn-green-gradient-lg,
+      .btn-orange-gradient-lg,
+      .btn-green-dark-sm,
+      .btn-green-outline
+    ) {
+    width: 100%;
+  }
+
+  &:is(
+      .btn-green-gradient-lg,
+      .btn-orange-gradient-lg,
+      .btn-green-dark-sm,
+      .btn-green-outline,
+      .btn-blue-outline,
+      .btn-red-outline
+    ) {
+    font-weight: 300;
+  }
+
+  &:is(.btn-green-dark-sm, .btn-green-dark-md) {
+    @include FontMixin($f-A1);
+  }
+
+  &:is(.btn-green-dark-sm) {
+    @include FontMixin($f-A1);
+    padding-block: clamp(var(--s-Z2), var(--s-VW2), var(--s-Z0));
+  }
+
+  &:is(.btn-green-gradient-md, .btn-orange-light-md, .btn-orange-outline) {
+    @include DynamicFontMixin($f-Z0, var(--s-VW1), $f-A2);
+    padding: var(--s-Z5) var(--s-A2) !important;
+  }
+
+  &:is(
+      .btn-orange-light-md,
+      .btn-green-sm,
+      .btn-green-gradient-sm,
+      .btn-green-outline,
+      .btn-blue-outline,
+      .btn-red-outline
+    ),
+  &:is(.btn-orange-light-md, .btn-green-sm, .btn-green-outline) > i {
+    @include FontMixin($f-Z0);
+  }
+
+  &:is(.btn-green-gradient-sm, .btn-green-outline) {
+    padding: var(--s-Z3) var(--s-Z5) !important;
+  }
+
+  &:is(.btn-blue-outline, .btn-red-outline) {
+    padding: calc(var(--s-Z7) + var(--s-Z9)) var(--s-Z5) !important;
+  }
+
+  &.btn-green-gradient-lg {
+    margin-top: 1rem;
+  }
+
+  &.btn-orange-gradient-lg {
+    background: $secondary-gradient !important;
+  }
+
+  &.btn-green-dark-md {
+    width: var(--s-A7);
+    height: auto;
+    aspect-ratio: 1/1;
+    // padding: var(--s-Z5);
+  }
+
+  &.btn-orange-light-md {
+    background: $corange-A300 !important;
+  }
+
+  &.btn-green-sm {
+    padding: var(--s-Z5) var(--s-Z4) !important;
+    aspect-ratio: 1/1;
+  }
+
+  &.btn-orange-outline {
+    border-radius: 20% / 50% !important;
+    background-color: transparent !important;
+    border: 1px solid $corange-A500 !important;
+    color: $graySP-Z000 !important;
+    &:hover {
+      background-color: $corange-A500 !important;
+    }
+  }
+
+  &.btn-green-outline {
+    border: 1px solid $cgreen-A900;
+    color: $cgreen-A900;
+    &:hover {
+      background-color: $cgreen-A900;
+    }
+  }
+
+  &.btn-link {
+    padding-inline: 0rem;
+    color: $cblue-A100;
+    &:hover {
+      color: $cblue-A200;
+    }
+  }
+
+  &.btn-blue-outline {
+    color: $cblue-A200;
+    border: 1px solid $cblue-A200;
+    &:hover {
+      background-color: $cblue-A200;
+    }
+  }
+  &.btn-red-outline {
+    color: $cred-Z000;
+    border: 1px solid $cred-Z000;
+    &:hover {
+      background-color: $cred-Z000;
+    }
+  }
+}
+
+/**/
+.button {
+  padding: $control-padding;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+
+  &.primary {
+    background-color: $cgreen-A700;
+    color: $corange-A100;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+/**/
+[dir="rtl"] {
+  .btn-set {
+    &.btn-orange-light-md {
+      padding: var(--s-Z5) clamp(var(--s-Z9), var(--s-VW1), var(--s-Z5)) !important;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "headers":{
+        "OurServices": "Our Services",
+        "TopPlaces": "Top Places"
+    },
+    "keywords": {
+        "Home": "Home",
+        "Spaces": "Spaces",
+        "AboutUs": "About Us",
+        "ContactUs": "Contact Us",
+        "From": "From",
+        "To": "To",
+        "YourHome": "Home",
+        "NumberOf": "Number of",
+        "Now": "Now",
+        "Top": "Top",
+        "See": "See",
+        "More": "More"
+    },
+    "actions": {
+        "SignIn": "Sign in",
+        "Register": "Register",
+        "Explore": "Expolre",
+        "Search": "Search",
+        "SeeMore": "See More"
+    },
+    "symbols":{
+        "!": "!",
+        "?": "?"
+    },
+    "paragraphs": {
+        "BannerParg": "Book with Ease, Stay with Confidence!",
+        "ServicesParg": "Exceeding Expectations, Every Stay.",
+        "HomeParg": {
+            "Parg1": "Once in a lifetime vacation",
+            "Parg2": "Dive into Adventure and Beauty"
+        },
+        "TopPlacesParg": "Your Guide to Unforgettable Places.",
+        "NewsletterParg": {
+            "Parg1": "Subscribe to our newsletter",
+            "Parg2": "Get e-mail updates about our latest spaces"
+        }
+    },
+    "forms": {
+        "labels": {
+            "SelectArea": "Select Area",
+            "Duration": "Duration",
+            "Guests": "Guests",
+            "Email": "Email"
+        }
+    }
+}
