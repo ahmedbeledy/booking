@@ -89,6 +89,13 @@
   .bg-image {
     background-size: 100% auto !important;
   }
+  [dir=rtl]{
+    .banner {
+      .header {
+        text-align: right !important;
+      }
+    }
+  }
 }
 
 @media (min-width: 1100px) {

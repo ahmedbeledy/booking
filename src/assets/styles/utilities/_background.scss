@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 .bg-dark {
-  background-color: $graySP-A800 !important;
+  background-color: $graySP-A900 !important;
   color: $graySP-Z000;
 }
 
@@ -27,5 +27,5 @@
 
 
 .gradient-shadow{
-  background: linear-gradient(to bottom, transparent, $graySP-A800);
+  background: linear-gradient(to bottom, transparent, $graySP-A900);
 }

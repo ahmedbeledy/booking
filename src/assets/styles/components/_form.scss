@@ -93,6 +93,7 @@
       }
     }
 
+    //&:has(select:not(.defPad), textarea)
     &:has(select, textarea) {
       padding: 0;
       .suffix {
@@ -133,6 +134,12 @@
         padding: calc($control-padding + var(--s-Z8)) 0rem calc($control-padding + var(--s-Z8)) $control-padding;
         margin-inline-end: $control-padding;
       }
+
+      /*
+      &:is(select:not(.defPad), textarea) {
+        padding: $control-padding;
+      }
+      */
 
       &::placeholder {
         color: black;

@@ -1,10 +1,10 @@
 <div class="service-card defBG rounded-8 justify-content-end d-flex flex-column {{ additionClassName }}"
      [ngStyle]="{ 'background-image':  'url(' + backgroundImageUrl + ')'  }">
   <div class="padding-40px pe-4rem d-flex flex-column gradient-shadow">
-        <div class="font-sets f-S0 title">
+        <div class="main-font color-white title">
             {{ title }}
         </div>
-        <div class="row align-items-center flex-nowrap font-sets f-S0">
+        <div class="row align-items-center flex-nowrap main-font color-white">
             <div class="col-11 paragraph fw-300">
                 <ng-content select=".service-details"></ng-content>
             </div>

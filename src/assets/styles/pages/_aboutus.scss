@@ -38,12 +38,12 @@
   padding: $section-padding;
   margin-inline: auto !important;
   header {
-    font-size: calc(var(--s-B2) * 2 - 0.2rem);
+    font-size: calc(var(--s-B2) * 2 - 0.2rem);//3.5rem
   }
   p {
     color: $graySP-A600;
-    font-size: var(--s-A4);
-    line-height: var(--s-A5);
+    font-size: var(--s-A4);//1.3rem
+    line-height: var(--s-A5);//1.5rem
   }
 }
 

@@ -1,5 +1,7 @@
 @use "../abstracts/variables" as *;
-
+.main-background.z-1 {
+  padding-top: 92px;
+}
 
 .padding-set {
   --top-padding: var(--s-Z0);

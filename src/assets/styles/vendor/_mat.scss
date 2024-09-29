@@ -47,5 +47,5 @@ $LacasaR-theme: mat.define-light-theme(
   fill: $cgreen-A700;
 }
 .mat-mdc-form-field-icon-suffix:has(.greater-width){
-  width: 30%;
+  width: max-content;
 }

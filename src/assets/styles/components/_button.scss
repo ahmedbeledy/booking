@@ -191,3 +191,10 @@
   }
 }
 /**/
+[dir="rtl"] {
+  .btn-set {
+    &.btn-orange-light-md {
+      padding: var(--s-Z5) clamp(var(--s-Z9), var(--s-VW1), var(--s-Z5)) !important;
+    }
+  }
+}

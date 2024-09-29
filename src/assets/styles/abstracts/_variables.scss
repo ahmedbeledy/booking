@@ -47,6 +47,13 @@
   
   --vw-bbl: 375px;
   --vw-ubl: 1200px;
+
+  [dir=ltr]{
+    --ToDir: right; 
+  }
+  [dir=rtl]{
+    --ToDir: left;
+  }
 }
 
 $main-font: "Signika";
@@ -87,8 +94,8 @@ $graySP-G400: hsl(157, 3%, 46%);
 // Red
 $cred-Z000: hsl(4, 83%, 57%);
 // Gradient
-$main-gradient: linear-gradient(to right, $cgreen-A900, $cgreen-A700);
-$secondary-gradient: linear-gradient(to right, $corange-A500, $corange-A400, $corange-A200);
+$main-gradient: linear-gradient(to var(--ToDir), $cgreen-A900, $cgreen-A700);
+$secondary-gradient: linear-gradient(to var(--ToDir), $corange-A500, $corange-A400, $corange-A200);
 
 /**/
 $main-inline-padding: max(8.7vw - var(--s-A2), var(--s-A2));
