@@ -11,6 +11,7 @@
         "Spaces": "Spaces",
         "AboutUs": "About Us",
         "ContactUs": "Contact Us",
+        "Login": "Login",
         "From": "From",
         "To": "To",
         "YourHome": "Home",
@@ -18,7 +19,9 @@
         "Now": "Now",
         "Top": "Top",
         "See": "See",
-        "More": "More"
+        "More": "More",
+        "Here": "Here",
+        "Forgot": "Forgot"
     },
     "actions": {
         "SignIn": "Sign in",
@@ -50,7 +53,8 @@
             "OurVisionParg": "At La Casa Residence, we envision becoming a beacon of excellence in the hospitality sector. We aspire to set new standards in luxury, service, and guest satisfaction. Our vision is to be recognized as a premier hotel that consistently exceeds guest expectations.",
             "OurTeamParg": "Our team at Lacasa is passionate about hospitality and dedicated to making your stay exceptional. From the moment you arrive, our staff is here to cater to your every need, providing warm and attentive service to ensure your complete satisfaction."
         },
-        "ContactUsParg": "We`re here to help and answer any question you might have."
+        "ContactUsParg": "We`re here to help and answer any question you might have.",
+        "LoginParg": "Don`t have an account yet? create an account"
     },
     "forms": {
         "labels": {
@@ -58,6 +62,7 @@
             "Duration": "Duration",
             "Guests": "Guests",
             "Email": "Email",
+            "Password": "Password",
             "Bathrooms": "Bathrooms",
             "Beds": "Beds",
             "Name": "Name",
@@ -65,13 +70,18 @@
             "Message": "Message"
         },
         "placeholders": {
-            "Name": "Enter Your Name...",
-            "Email": "Enter Your Email...",
-            "PhoneNumber": "Enter Your Phone number..."
+            "Name": "Enter your name...",
+            "Email": "Enter your email...",
+            "Password": "Enter your password...",
+            "PhoneNumber": "Enter your phone number..."
         }
     },
     "ContactInfo": {
         "phone": "+20 103 333 3431",
         "address": "20 mohamed mandoor, Al Manteqah Al Oula, Nasr City, Cairo Governorate 4450113"
+    },
+    "Errors": {
+        "IsRequired": "is required",
+        "Invalid": "is invalid"
     }
 }

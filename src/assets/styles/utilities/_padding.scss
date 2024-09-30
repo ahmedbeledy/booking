@@ -47,3 +47,15 @@
 .ps-inherit{
   padding-inline-start: inherit !important;
 }
+
+.pc-Z6{
+  *:is(:nth-child(odd), :nth-child(even)){
+    padding: unset;
+  }
+  *:nth-child(odd){
+    padding-inline-end: var(--s-Z6);
+  }
+  *:nth-child(even){
+    padding-inline-start: var(--s-Z6);
+  }
+}

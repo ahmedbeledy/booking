@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { _DoesControlHasError, _MatchPassword } from '../../../core/models/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HelperService implements _DoesControlHasError, _MatchPassword {
+export class HelperService {
 
   constructor() { }
 

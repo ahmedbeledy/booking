@@ -3,11 +3,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { _PasswordPattern, IForm, ILogin } from '../../core';
 import { RouterModule } from '@angular/router';
 import { CardShellComponent } from "../../shared/components/card-shell/card-shell.component";
+import { HelperService } from '../../shared/services/helper/helper.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, CardShellComponent],
+  imports: [ReactiveFormsModule, RouterModule, CardShellComponent, TranslateModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
   loginForm!: FormGroup;
 
-  constructor(private _FB: FormBuilder) { }
+  constructor(private _FB: FormBuilder, private _helperService: HelperService) { }
 
   ngOnInit(): void {
     const DEFAULT_VALIDATORS = [Validators.required];
@@ -32,6 +34,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() { }
+
+  doesControlHasError(controlName: string){
+    return this._helperService.doesControlHasError(this.loginForm, controlName);
+  }
 
 
 }
