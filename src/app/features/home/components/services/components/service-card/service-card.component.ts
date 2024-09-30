@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TranslateControlService } from '../../../../shared/services/translateContol/translate-control.service';
+import { TranslateControlService } from '../../../../../../shared/services/translateContol/translate-control.service';
 enum DIR{
   rtl="left",
   ltr="right"

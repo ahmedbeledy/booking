@@ -131,7 +131,9 @@
       grid-column: 2/3;
 
       &:is(select, textarea) {
-        padding: calc($control-padding + var(--s-Z8)) 0rem calc($control-padding + var(--s-Z8)) $control-padding;
+        padding-block: calc($control-padding + var(--s-Z8));
+        padding-inline-start: $control-padding;
+        padding-inline-end: 0rem;
         margin-inline-end: $control-padding;
       }
 
@@ -176,3 +178,14 @@
     }
   }
 }
+// [dir=rtl]{
+//   .form{
+//     .control{
+//       .field{
+//         &:is(select, textarea) {
+//           padding: calc($control-padding + var(--s-Z8)) 0rem calc($control-padding + var(--s-Z8)) $control-padding;
+//         }
+//       }
+//     }
+//   }
+// }

@@ -4,8 +4,8 @@
         <div class="col-12 col-sm-6 col-md-4">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-icon matIconPrefix>location_on</mat-icon>
-                <mat-select #select id="selectArea" placeholder="Select Area" [(ngModel)]="queryParams.area">
-                    <mat-option selected="" [value]="">Select Area</mat-option>
+                <mat-select #select id="selectArea" placeholder='{{"forms.labels.SelectArea"|translate}}' [(ngModel)]="queryParams.area">
+                    <mat-option selected="" [value]="">{{"forms.labels.SelectArea"|translate}}</mat-option>
                     @for (area of areas; track area) {
                     <mat-option [value]="area.id">{{area.name}}</mat-option>
                     }
@@ -14,7 +14,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-4">
             <mat-form-field appearance="outline" class="w-100">
-                <input matInput [(ngModel)]="queryParams.duration" placeholder="Duration" [matDatepicker]="picker1">
+                <input matInput [(ngModel)]="queryParams.duration" placeholder="{{'forms.labels.Duration'|translate}}" [matDatepicker]="picker1">
                 <mat-datepicker-toggle matIconPrefix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
                 <mat-datepicker-toggle matIconSuffix [for]="picker1">
@@ -25,8 +25,8 @@
         <div class="col-12 col-sm-6 col-md-4">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-icon matIconPrefix>group</mat-icon>
-                <span>Guests</span>
-                <input matInput class="d-none" [(ngModel)]="queryParams.guests" placeholder="Guests" type="number">
+                <span>{{'keywords.NumberOf'|translate}} {{'forms.labels.Guests'|translate}}</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.guests" placeholder="{{'forms.labels.Guests'|translate}}" type="number">
                 <div matSuffix class="greater-width px-3">
                     <app-custom-input-number [(value)]="queryParams.guests"></app-custom-input-number>
                 </div>
@@ -35,8 +35,8 @@
         <div class="col-12 col-sm-6 col-md-4">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-icon matIconPrefix>bathroom</mat-icon>
-                <span>Bathrooms</span>
-                <input matInput class="d-none" [(ngModel)]="queryParams.bathrooms" placeholder="Bathrooms" type="number">
+                <span>{{'keywords.NumberOf'|translate}} {{'forms.labels.Bathrooms'|translate}}</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.bathrooms" placeholder="{{'forms.labels.Bathrooms'|translate}}" type="number">
                 <div matSuffix class="greater-width px-3">
                     <app-custom-input-number [(value)]="queryParams.bathrooms"></app-custom-input-number>
                 </div>
@@ -45,15 +45,15 @@
         <div class="col-12 col-sm-6 col-md-4">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-icon matIconPrefix>bed</mat-icon>
-                <span>Beds</span>
-                <input matInput class="d-none" [(ngModel)]="queryParams.beds" placeholder="Beds" type="number">
+                <span>{{'keywords.NumberOf'|translate}} {{'forms.labels.Beds'|translate}}</span>
+                <input matInput class="d-none" [(ngModel)]="queryParams.beds" placeholder="{{'forms.labels.Beds'|translate}}" type="number">
                 <div matSuffix class="greater-width px-3">
                     <app-custom-input-number [(value)]="queryParams.beds"></app-custom-input-number>
                 </div>
             </mat-form-field>
         </div>
         <div class="col-12 col-sm-6 col-md-4">
-            <button (click)="onSearch()" type="submit" class="btn-set btn-green-dark-sm with-radius">Search</button>
+            <button (click)="onSearch()" type="submit" class="btn-set btn-green-dark-sm with-radius">{{'actions.Search'|translate}}</button>
         </div>
 
     </div>

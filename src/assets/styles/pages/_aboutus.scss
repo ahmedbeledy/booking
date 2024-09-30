@@ -3,7 +3,7 @@
 .aboutus-header {
   height: 400px;
   background: linear-gradient(
-    to right,
+    to var(--ToDir),
     $cgreen-A700 0% 40%,
     transparent 40% 80%,
     $cgreen-A700 40% 100%

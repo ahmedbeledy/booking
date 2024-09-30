@@ -1,7 +1,10 @@
 {
     "headers":{
         "OurServices": "Our Services",
-        "TopPlaces": "Top Places"
+        "TopPlaces": "Top Places",
+        "OurMission": "Our Mission",
+        "OurVision": "Our Vision",
+        "OurTeam": "Our Team"
     },
     "keywords": {
         "Home": "Home",
@@ -22,7 +25,8 @@
         "Register": "Register",
         "Explore": "Expolre",
         "Search": "Search",
-        "SeeMore": "See More"
+        "SeeMore": "See More",
+        "Submit": "Submit"
     },
     "symbols":{
         "!": "!",
@@ -39,14 +43,35 @@
         "NewsletterParg": {
             "Parg1": "Subscribe to our newsletter",
             "Parg2": "Get e-mail updates about our latest spaces"
-        }
+        },
+        "AboutUsParg":{
+            "MainParg": "Welcome to La Casa Residence, a 5-star hotel in the heart of El Nasr City, Cairo, where luxury meets convenience. At Lacasa, we are dedicated to providing an exceptional hospitality experience for visitors from Egypt and beyond. Our goal is to ensure that every guest feels pampered, valued, and at home.",
+            "OurMissionParg": "Our mission is to redefine luxury and comfort in the hospitality industry. We strive to create an environment where our guests can relax, rejuvenate, and enjoy the finest amenities and services. Whether you are here for business or leisure, Lacasa aims to be your preferred destination in Cairo.",
+            "OurVisionParg": "At La Casa Residence, we envision becoming a beacon of excellence in the hospitality sector. We aspire to set new standards in luxury, service, and guest satisfaction. Our vision is to be recognized as a premier hotel that consistently exceeds guest expectations.",
+            "OurTeamParg": "Our team at Lacasa is passionate about hospitality and dedicated to making your stay exceptional. From the moment you arrive, our staff is here to cater to your every need, providing warm and attentive service to ensure your complete satisfaction."
+        },
+        "ContactUsParg": "We`re here to help and answer any question you might have."
     },
     "forms": {
         "labels": {
             "SelectArea": "Select Area",
             "Duration": "Duration",
             "Guests": "Guests",
-            "Email": "Email"
+            "Email": "Email",
+            "Bathrooms": "Bathrooms",
+            "Beds": "Beds",
+            "Name": "Name",
+            "PhoneNumber": "Phone number",
+            "Message": "Message"
+        },
+        "placeholders": {
+            "Name": "Enter Your Name...",
+            "Email": "Enter Your Email...",
+            "PhoneNumber": "Enter Your Phone number..."
         }
+    },
+    "ContactInfo": {
+        "phone": "+20 103 333 3431",
+        "address": "20 mohamed mandoor, Al Manteqah Al Oula, Nasr City, Cairo Governorate 4450113"
     }
 }
