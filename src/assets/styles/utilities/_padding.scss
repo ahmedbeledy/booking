@@ -48,14 +48,22 @@
   padding-inline-start: inherit !important;
 }
 
-.pc-Z6{
-  *:is(:nth-child(odd), :nth-child(even)){
+[class*=pc-]{
+  --Center-Pad: var(--s-Z0);
+  &>*:is(:nth-child(odd), :nth-child(even)){
     padding: unset;
   }
-  *:nth-child(odd){
-    padding-inline-end: var(--s-Z6);
+  &>*:nth-child(odd){
+    padding-inline-end: var(--Center-Pad);
   }
-  *:nth-child(even){
-    padding-inline-start: var(--s-Z6);
+  &>*:nth-child(even){
+    padding-inline-start: var(--Center-Pad);
+  }
+
+  &.pc-Z6{
+    --Center-Pad: var(--s-Z6);
+  }
+  &.pc-Z8{
+    --Center-Pad: var(--s-Z8);
   }
 }

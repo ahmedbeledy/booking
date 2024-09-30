@@ -1,122 +1,201 @@
-<app-card-shell>
-    <section class="container-fluid mainBody">
+<app-card-shell [moreClasses]="'bg-white rounded-1 padding-set pad-v2'">
+    <section class="container-fluid">
         <form [formGroup]="registerForm" (ngSubmit)="register()" class="form custom-rows v1">
             <div class="row form-header v1 mb-0">
-                <h2>Register</h2>
-                <p class="mb-0">Already have an account? Try to <a [routerLink]="['/login']">Login</a></p>
+                <h2>{{"keywords.Register"|translate}}</h2>
+                <p class="mb-0">{{"paragraphs.RegisterParg"|translate}} <a
+                        [routerLink]="['/login']">{{"keywords.Login"|translate}}</a></p>
             </div>
-            <div class="row form-header v1">
+            <div class="row mb-0">
                 <div class="line gray lng-v1"></div>
-                <p>Register using your social account</p>
-                <div class="col-6 p-0 pe-1">
-                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-google-fill"></i> Google</button>
+            </div>
+
+            <div class="row mb-0 form-header v1">
+                <p>{{"keywords.Register"|translate}} {{"keywords.Using"|translate}}
+                    {{"keywords.YourSocialMedia"|translate}}</p>
+            </div>
+            <div class="row mb-0 pc-Z6">
+                <div class="col-6">
+                    <button class="btn-set btn-green-outline with-radius maxw-A5"><i class="ri-google-fill"></i>
+                        Google</button>
                 </div>
-                <div class="col-6 p-0 ps-1">
-                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-facebook-circle-fill"></i>
+                <div class="col-6">
+                    <button class="btn-set btn-green-outline with-radius maxw-A5"><i
+                            class="ri-facebook-circle-fill"></i>
                         Facebook</button>
                 </div>
+            </div>
+            <div class="row mb-0">
                 <div class="line gray lng-v1"></div>
             </div>
             <div class="row form-header v1 mb-0">
-                <p>Create Account</p>
+                <p>{{"actions.Create"|translate}} {{"keywords.Account"|translate}}</p>
             </div>
-    
+
             <div class="row">
-                <label for="first_name" class="label">First Name</label>
+                <label for="first_name" class="label">{{"forms.labels.FirstName"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-id-card-fill"></i></span>
                     <input type="text" id="first_name" class="field" formControlName="first_name"
-                        placeholder="Enter your first name..." aria-describedby="first_name">
+                        placeholder='{{"forms.placeholders.FirstName"|translate}}' aria-describedby="first_name">
+                    @if (doesControlHasError('first_name')) {
+                    <div class="error">
+                        @if(registerForm.get('first_name')?.hasError('required')){<p>
+                            {{"forms.labels.FirstName"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                    </div>
+                    }
+
                 </div>
             </div>
             <div class="row">
-                <label for="last_name" class="label">Last Name</label>
+                <label for="last_name" class="label">{{"forms.labels.LastName"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-id-card-fill"></i></span>
                     <input type="text" id="last_name" class="field" formControlName="last_name"
-                        placeholder="Enter your last name..." aria-describedby="last_name">
+                        placeholder='{{"forms.placeholders.LastName"|translate}}' aria-describedby="last_name">
+                    @if (doesControlHasError('last_name')) {
+                    <div class="error">
+                        @if(registerForm.get('last_name')?.hasError('required')){<p>
+                            {{"forms.labels.LastName"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
-                <label for="email" class="label">Email</label>
+                <label for="email" class="label">{{"forms.labels.Email"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-mail-fill"></i></span>
-                    <input type="email" id="email" class="field" formControlName="email" placeholder="Enter your email..."
-                        aria-describedby="email">
+                    <input type="email" id="email" class="field" formControlName="email"
+                        placeholder='{{"forms.placeholders.Email"|translate}}' aria-describedby="email">
+                    @if (doesControlHasError('email')) {
+                    <div class="error">
+                        @if (registerForm.get('email')?.hasError('required')) {<p>{{"forms.labels.Email"|translate}}
+                            {{"Errors.IsRequired"|translate}}</p>}
+                        @if (registerForm.get('email')?.hasError('email')) {<p>{{"forms.labels.Email"|translate}}
+                            {{"Errors.Invalid"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <label for="phoneNumber" class="label">Phone number</label>
-                    <div class="row">
-                        <div class="col-4 p-0 pe-1">
+                    <label for="phoneNumber" class="label">{{"forms.labels.PhoneNumber"|translate}}</label>
+                    <div class="row pc-Z8">
+                        <div class="col-sm-4 col-5">
                             <div class="control">
                                 <select name="code" id="code" class="field" formControlName="code">
-                                    <option [value]="null" disabled selected>Code</option>
+                                    <option [value]="null" disabled selected>{{"forms.labels.Code"|translate}}</option>
                                     <option value="+20">Egypt (+20)</option>
                                     <option value="+1">Hello</option>
                                 </select>
+                                @if (doesControlHasError('code')) {
+                                <div class="error">
+                                    @if(registerForm.get('code')?.hasError('required')){<p>
+                                        {{"forms.labels.LastName"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                                </div>
+                                }
                             </div>
                         </div>
-                        <div class="col-8 p-0 ps-1">
+                        <div class="col-sm-8 col-7">
                             <div class="control">
                                 <input type="text" id="phoneNumber" class="field" formControlName="phone_number"
-                                    placeholder="Enter your phone number..." aria-describedby="phoneNumber">
+                                    placeholder="{{'forms.placeholders.PhoneNumber'|translate}}"
+                                    aria-describedby="phoneNumber">
+                                @if (doesControlHasError('phone_number')) {
+                                <div class="error">
+                                    @if(registerForm.get('phone_number')?.hasError('required')){<p>
+                                        {{"forms.labels.PhoneNumber"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                                </div>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <label for="birthday" class="label">Birthday</label>
+                <label for="birthday" class="label">{{"forms.labels.BirthDate"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-cake-2-fill"></i></span>
                     <input type="date" id="birthday" class="field" formControlName="birthday"
-                        placeholder="Enter your birthday..." aria-describedby="birthday">
+                        aria-describedby="birthday">
+                    @if (doesControlHasError('birthday')) {
+                    <div class="error">
+                        @if(registerForm.get('birthday')?.hasError('required')){<p>
+                            {{"forms.labels.BirthDate"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
-                <label for="gender" class="label">Gender</label>
+                <label for="gender" class="label">{{"forms.labels.Gender"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-men-line"></i></span>
-                    <select name="gender" id="gender" class="field defPad" formControlName="gender">
-                        <option [value]="null" disabled selected>Gender</option>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
+                    <select name="gender" id="gender" class="field" formControlName="gender">
+                        <option [value]="null" disabled selected>{{"forms.labels.Gender"|translate}}</option>
+                        <option value="male">{{"keywords.Male"|translate}}</option>
+                        <option value="female">{{"keywords.Female"|translate}}</option>
                     </select>
+                    @if (doesControlHasError('gender')) {
+                    <div class="error">
+                        @if(registerForm.get('gender')?.hasError('required')){<p>
+                            {{"forms.labels.Gender"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
-                <label for="nationality" class="label">Nationality</label>
+                <label for="nationality" class="label">{{"forms.labels.Nationality"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-flag-fill"></i></span>
                     <select name="nationality" id="nationality" class="field defPad" formControlName="nationality">
-                        <option [value]="null" disabled selected>Nationality</option>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
+                        <option [value]="null" disabled selected>{{"forms.labels.Nationality"|translate}}</option>
+                        <option value="Egyption">Egyption</option>
                     </select>
+                    @if (doesControlHasError('nationality')) {
+                    <div class="error">
+                        @if(registerForm.get('nationality')?.hasError('required')){<p>
+                            {{"forms.labels.Nationality"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
-                <label for="password" class="label">Password</label>
+                <label for="password" class="label">{{"forms.labels.Password"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
                     <input type="{{hide ? 'password': 'text'}}" id="password" class="field" formControlName="password"
-                        placeholder="Enter your password..." aria-describedby="password">
-                    <span class="suffix main-color" (click)="hide=!hide"><i class="{{hide? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                        placeholder='{{"forms.placeholders.Password"|translate}}' aria-describedby="password">
+                    <span class="suffix main-color" (click)="hide=!hide"><i
+                            class="{{hide? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                    @if (doesControlHasError('password')) {
+                    <div class="error">
+                        @if (registerForm.get('password')?.hasError('required')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                        @if (registerForm.get('password')?.hasError('pattern')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.Invalid"|translate}}</p>}
+                    </div>
+                    }
                 </div>
             </div>
             <div class="row">
-                <label for="confirm_password" class="label">Confirm Password</label>
+                <label for="confirm_password" class="label">{{"forms.labels.ConfirmPassword"|translate}}</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
-                    <input type="{{hide_confirm ? 'password': 'text'}}" id="confirm_password" class="field" formControlName="confirm_password"
-                        placeholder="Re-Enter your password..." aria-describedby="confirm_password">
-                    <span class="suffix main-color" (click)="hide_confirm=!hide_confirm"><i class="{{hide_confirm? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                    <input type="{{hide_confirm ? 'password': 'text'}}" id="confirm_password" class="field"
+                        formControlName="confirm_password" placeholder='{{"forms.placeholders.ConfirmPassword"|translate}}'
+                        aria-describedby="confirm_password">
+                    <span class="suffix main-color" (click)="hide_confirm=!hide_confirm"><i
+                            class="{{hide_confirm? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                            @if (doesControlHasError('confirm_password') || !matchPassword()) {
+                                <div class="error">
+                                    @if (registerForm.get('confirm_password')?.hasError('required')) {<p>{{"forms.labels.ConfirmPassword"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                                    @if (registerForm.get('confirm_password')?.hasError('pattern')) {<p>{{"forms.labels.ConfirmPassword"|translate}} {{"Errors.Invalid"|translate}}</p>}
+                                    @if (!registerForm.get('confirm_password')?.hasError('required') && !registerForm.get('confirm_password')?.hasError('pattern') && !matchPassword()) {<p>{{"forms.labels.ConfirmPassword"|translate}} {{"Errors.DoesntMatch"|translate}} {{"forms.labels.Password"|translate}}</p>}
+                                </div>
+                                }
                 </div>
             </div>
             <div class="row">
-                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-A5 mx-auto" [disabled]="registerForm.invalid">Submit</button>
+                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-A5 mx-auto"
+                    [disabled]="registerForm.invalid">{{"actions.Submit"|translate}}</button>
             </div>
         </form>
     </section>

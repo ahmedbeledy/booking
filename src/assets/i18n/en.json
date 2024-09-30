@@ -12,6 +12,7 @@
         "AboutUs": "About Us",
         "ContactUs": "Contact Us",
         "Login": "Login",
+        "Register": "Register",
         "From": "From",
         "To": "To",
         "YourHome": "Home",
@@ -21,7 +22,14 @@
         "See": "See",
         "More": "More",
         "Here": "Here",
-        "Forgot": "Forgot"
+        "Forgot": "Forgot",
+        "First": "First",
+        "Last": "Last",
+        "Using": "using",
+        "YourSocialMedia": "your social media",
+        "Account": "Account",
+        "Male": "Male",
+        "Female": "Female"
     },
     "actions": {
         "SignIn": "Sign in",
@@ -29,7 +37,8 @@
         "Explore": "Expolre",
         "Search": "Search",
         "SeeMore": "See More",
-        "Submit": "Submit"
+        "Submit": "Submit",
+        "Create": "Create"
     },
     "symbols":{
         "!": "!",
@@ -54,7 +63,8 @@
             "OurTeamParg": "Our team at Lacasa is passionate about hospitality and dedicated to making your stay exceptional. From the moment you arrive, our staff is here to cater to your every need, providing warm and attentive service to ensure your complete satisfaction."
         },
         "ContactUsParg": "We`re here to help and answer any question you might have.",
-        "LoginParg": "Don`t have an account yet? create an account"
+        "LoginParg": "Don`t have an account yet? create an account",
+        "RegisterParg": "Already have an account? Try to"
     },
     "forms": {
         "labels": {
@@ -63,16 +73,24 @@
             "Guests": "Guests",
             "Email": "Email",
             "Password": "Password",
+            "ConfirmPassword": "Confirm Password",
             "Bathrooms": "Bathrooms",
             "Beds": "Beds",
             "Name": "Name",
+            "FirstName": "First name",
+            "LastName": "Last name",
             "PhoneNumber": "Phone number",
-            "Message": "Message"
+            "Message": "Message",
+            "Code": "Code",
+            "BirthDate": "Birth Date",
+            "Gender": "Gender",
+            "Nationality": "Nationality"
         },
         "placeholders": {
             "Name": "Enter your name...",
             "Email": "Enter your email...",
             "Password": "Enter your password...",
+            "ConfirmPassword": "Re-Enter your password...",
             "PhoneNumber": "Enter your phone number..."
         }
     },
@@ -82,6 +100,7 @@
     },
     "Errors": {
         "IsRequired": "is required",
-        "Invalid": "is invalid"
+        "Invalid": "is invalid",
+        "DoesntMatch": "doesn`t match"
     }
 }
