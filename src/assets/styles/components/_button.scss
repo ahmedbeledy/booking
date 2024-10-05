@@ -80,7 +80,6 @@
   }
 
   &:is(.btn-green-dark-sm) {
-    @include FontMixin($f-A1);
     padding-block: clamp(var(--s-Z2), var(--s-VW2), var(--s-Z0));
   }
 

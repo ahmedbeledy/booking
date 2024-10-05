@@ -1,0 +1,18 @@
+<section class="tabs-bar">
+    <div class="d-flex">
+        <div class="w-auto" *ngFor="let tab of data">
+            <ng-container *ngIf="tab.type == 'link'">
+                <a class="bar-tab" [routerLink]="[tab.routeTo]" routerLinkActive="active">
+                    {{tab.title | translate | titlecase}}
+                </a>
+            </ng-container>
+            <ng-container *ngIf="tab.type == 'button'">
+                <button class="btn btn-reset bar-tab" [ngClass]="{'active': tab.active}" (click)="onClick(tab)">
+                    {{tab.title | translate | titlecase}}
+                </button>
+            </ng-container>
+        </div>
+
+    </div>
+    <div class="line"></div>
+</section>

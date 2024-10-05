@@ -44,6 +44,9 @@
 .f-A1{
   @include FontMixin($f-A1);
 }
+.f-A4{
+  @include FontMixin($f-A4);
+}
 .f-Z0-A3 {
   @include DynamicFontMixin($f-Z0, var(--s-VW2), $f-A3);
 }

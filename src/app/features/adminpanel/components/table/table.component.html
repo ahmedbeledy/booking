@@ -1,0 +1,83 @@
+<section>
+  <table class="native-table">
+    <thead class="tableHeader">
+      <tr>
+        <!-- //it is done how to create headers -->
+        <th *ngFor="let col of columns" class="fluid-padding">
+          {{ col.header }}
+        </th>
+        <!-- //adding actions in my header -->
+        <th class="fluid-padding" *ngIf="operators && operators.length">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="tableBody">
+      <ng-container *ngIf="data && data.length">
+        <!-- data which i recived from facilites for example -->
+        <tr *ngFor="let row of data">
+          <td class="fluid-md-padding" *ngFor="let col of columns">
+
+            <ng-container
+              *ngIf="row[col.property] !== null || row[col.property] !== undefined || (isArray(row[col.property]) && row[col.property].length > 0)">
+              <span *ngIf="col.isImage">
+                <img [src]="row[col.property]" class="imageDim" />
+              </span>
+              <span *ngIf="col.isDate">{{row[col.property] | date:"fullDate"}}</span>
+              <ng-container *ngIf="col.isBoolean">
+                <span *ngIf="row[col.property] === true">Yes</span>
+                <span *ngIf="row[col.property] === false">No</span>
+              </ng-container>
+              <span *ngIf="!col.isImage && !col.isDate && !col.isBoolean">{{row[col.property]}}</span>
+            </ng-container>
+            <span
+              *ngIf="row[col.property] === null || row[col.property] === undefined || (isArray(row[col.property]) && row[col.property].length === 0)">
+              - </span>
+          </td>
+
+          <td class="fluid-md-padding" *ngIf="operators && operators.length>1">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+              <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item *ngFor="let operator of operators" (click)="selectedOp(operator)(row)">
+                <mat-icon>{{ operator.icon }}</mat-icon>
+                <span>{{ operator.title }}</span>
+              </button>
+            </mat-menu>
+          </td>
+
+          <td class="fluid-md-padding" *ngIf="operators && operators.length==1">
+            <button class="bg-transparent" (click)="selectedOp(operators[0])(row)">
+              <div class="d-flex justify-content-center align-content-center ">
+                <mat-icon class="me-1">{{ operators[0].icon }}</mat-icon>
+                <span>{{ operators[0].title }}</span>
+              </div>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="(data && data.length === 0) || data === undefined">
+        <td [attr.colspan]="columns.length + 1">
+          <div class="container">
+            <div class="row m-3 text-center">
+              <div class="d-flex flex-column align-items-center">
+                <!-- <img
+                  class="p-1"
+                  src="assets/images/delete-img.svg"
+                  alt="No Data"
+                /> -->
+                <div class="w-100 maxw-X0">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 110" data-test-id="peg-no-data-illustration" class="peg-table__empty-state-image"><g data-name="Layer 2"><path d="M49 96.63a.5.5 0 01-.5-.5V32.69a.5.5 0 01.5-.5.5.5 0 01.5.5v63.44a.5.5 0 01-.5.5z" fill="#031e55"></path><path d="M60.28 96.63H37.77a.5.5 0 010-1h22.51a.5.5 0 010 1z" fill="#031e55"></path><path d="M84.67 78.14H13.38V33.77a4 4 0 014-4h63.29a4 4 0 014 4v44.37z" fill="#bed1f8"></path><path d="M80.67 85.24H17.38a4 4 0 01-4-4v-3.1h71.29v3.1a4 4 0 01-4 4z" fill="#031e55"></path><rect x="29.26" y="45.45" width="5.98" height="23.4" rx="1" fill="#fff"></rect><rect x="40.44" y="39.07" width="5.98" height="29.78" rx="1" fill="#ff870a"></rect><rect x="51.63" y="52.64" width="5.98" height="16.21" rx="1" fill="#fff"></rect><rect x="62.81" y="45.45" width="5.98" height="23.4" rx="1" fill="#fff"></rect><path d="M8 25.11a.54.54 0 01-.35-.11l-3.2-3.1a.5.5 0 010-.71.51.51 0 01.71 0l3.21 3.1a.49.49 0 010 .7.48.48 0 01-.37.12zM.5 33.15a.49.49 0 01-.5-.49.52.52 0 01.49-.51L5 32.08a.5.5 0 110 1l-4.45.07zM15.79 21.62a.49.49 0 01-.5-.49l-.08-4.45a.49.49 0 01.49-.51.51.51 0 01.51.49l.08 4.46a.5.5 0 01-.49.5z" fill="#031e55"></path><path fill="none" d="M0 0h85v110H0z"></path></g></svg>
+                </div>
+                <h3 class="form-title p-1">No Data !</h3>
+                <p class="w-75 form-regular fluid-sm-text">
+                  Unfortunately there are no data found right now, You can check
+                  later.
+                </p>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

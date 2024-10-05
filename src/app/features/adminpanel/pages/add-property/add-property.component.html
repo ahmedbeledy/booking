@@ -1,0 +1,27 @@
+<section class="min-vh-100 bg-light ">
+    <header class="adminpanel-header padding-set">
+        <div class="row flex-nowrap  align-items-center w-100">
+            <div class="col-7 d-flex align-items-center">
+                <!-- Logo -->
+                <a class="logo">
+                    <img src="assets/img/Logo/Logo.png" alt="MDB Logo" loading="lazy" />
+                </a>
+            </div>
+            <div class="col-5">
+                <div class="d-flex justify-content-end">
+                    <button [matMenuTriggerFor]="menu2" class="btn-set bg-transparent text-white f-A4 fw-300">
+                        <i class="ri-account-circle-line"></i>
+                    </button>
+                    <mat-menu #menu2="matMenu" class="m-1" xPosition="before">
+                        <div class="dropdown-list">
+                            <div class="items">
+                            </div>
+                        </div>
+                    </mat-menu>
+                </div>
+            </div>
+    
+        </div>
+    </header>
+    <router-outlet></router-outlet>
+</section>

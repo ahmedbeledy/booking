@@ -88,6 +88,8 @@
         },
         "placeholders": {
             "Name": "Enter your name...",
+            "FirstName": "Enter your first name...",
+            "LastName": "Enter your last name...",
             "Email": "Enter your email...",
             "Password": "Enter your password...",
             "ConfirmPassword": "Re-Enter your password...",

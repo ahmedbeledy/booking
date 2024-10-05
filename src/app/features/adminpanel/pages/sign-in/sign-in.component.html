@@ -1,0 +1,47 @@
+<section class="bg-light stepper-section min-vh-100">
+    <header class="step-header">
+        {{"keywords.Login"|translate}}
+    </header>
+    <div class="step-card p-4 px-5">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="form custom-rows v1">
+            <div class="row">
+                <label for="email" class="label">{{"forms.labels.Email"|translate}}</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-mail-fill"></i></span>
+                    <input type="email" id="email" class="field" formControlName="email"
+                        placeholder='{{"forms.placeholders.Email"|translate}}' aria-describedby="email">
+                    @if (doesControlHasError('email')) {
+                    <div class="error">
+                        @if (loginForm.get('email')?.hasError('required')) {<p>{{"forms.labels.Email"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                        @if (loginForm.get('email')?.hasError('email')) {<p>{{"forms.labels.Email"|translate}} {{"Errors.Invalid"|translate}}</p>}
+                    </div>
+                    }
+
+                </div>
+            </div>
+            <div class="row">
+                <label for="password" class="label">{{"forms.labels.Password"|translate}}</label>
+                <div class="control">
+                    <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
+                    <input type="{{hide ? 'password': 'text'}}" id="password" class="field" formControlName="password"
+                        placeholder='{{"forms.placeholders.Password"|translate}}' aria-describedby="password">
+                    <span class="suffix main-color" (click)="hide=!hide"><i
+                            class="{{hide? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
+                    @if (doesControlHasError('password')) {
+                    <div class="error">
+                        @if (loginForm.get('password')?.hasError('required')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.IsRequired"|translate}}</p>}
+                        @if (loginForm.get('password')?.hasError('pattern')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.Invalid"|translate}}</p>}
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <a routerLink="/" class="form-link v1">{{"keywords.Forgot"|translate}} {{"forms.labels.Password"|translate}}{{"symbols.?"|translate}}</a>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-X7 mx-auto"
+                    [disabled]="loginForm.invalid">{{"actions.SignIn"|translate}}</button>
+            </div>
+        </form>
+    </div>
+</section>

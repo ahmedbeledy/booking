@@ -1,0 +1,31 @@
+<nav class="adminpanel-navbar">
+    <div class="d-flex flex-nowrap justify-content-start align-items-center">
+        @if (module === "Group") {
+        <a class="navbar-link" routerLink="/adminpanel" routerLinkActive="active-link">
+            Group Homepage
+        </a>
+        <a class="navbar-link" routerLink="/adminpanel/reviews" routerLinkActive="active-link">
+            Reviews
+        </a>
+        <a class="navbar-link" routerLink="/adminpanel/finance" routerLinkActive="active-link">
+            Finance
+        </a>
+        }
+        @if (module === "Property") {
+        <a class="navbar-link" routerLink="/adminpanel/property" routerLinkActive="active-link">
+            Home
+        </a>
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="navbar-link dropbtn">Property <i class="ri-arrow-down-s-line"></i></a>
+            <div class="dropdown-content">
+                <a [routerLink]="['/adminpanel/property/info']" routerLinkActive="router-link-active" >General Info</a>
+                <a [routerLink]="['/adminpanel/property/aminities']" routerLinkActive="router-link-active" >Aminities</a>
+                <a [routerLink]="['/adminpanel/property/facilities']" routerLinkActive="router-link-active" >Facilities</a>
+            </div>
+        </div>
+        <a class="navbar-link" routerLink="/adminpanel/reservations" routerLinkActive="active-link">
+            Reservations
+        </a>
+        }
+    </div>
+</nav>

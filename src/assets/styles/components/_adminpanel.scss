@@ -1,0 +1,197 @@
+@use "../abstracts/variables" as *;
+
+[class*="adminpanel-"] {
+  &.adminpanel-home {
+    padding-top: var(--s-A9);
+  }
+  &.adminpanel-header {
+    background: $main-gradient;
+    padding-inline: $main-inline-padding;
+    .logo {
+      img {
+        width: 120px;
+        border-right: 1px solid $graySP-A200;
+        padding-inline-end: var(--s-Z0);
+      }
+    }
+    .dropdown-list {
+        .items {
+          display: flex;
+          flex-direction: column;
+          .item {
+            padding-inline: var(--s-Z4);
+            color: black;
+            &:hover {
+              color: #e4c7a6;
+            }
+          }
+          a {
+            text-decoration: none;
+            padding: 6px;
+            margin: 5px;
+          }
+        }
+      }
+  }
+  &.adminpanel-navbar {
+    background: $main-gradient;
+    padding-inline: $main-inline-padding;
+    .navbar-link {
+      @include FontMixin($f-Z0);
+      text-decoration: none;
+      color: $graySP-A100;
+      padding: var(--s-Z0);
+      &.active-link{
+          background-color: $cgreen-B100;
+          position: relative;
+          &::after{
+              position: absolute;
+              content: "";
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 6px;
+              background-color: $cgreen-A300;
+          }
+      }
+    }
+  }
+  .header {
+    @include FontMixin($f-A4);
+    font-weight: 700;
+  }
+  .sub-header {
+    @include FontMixin($f-A3);
+    font-weight: 500;
+  }
+
+  .tabs-list {
+    display: flex;
+    border-bottom: 1px solid $graySP-A400;
+
+    button {
+      @include FontMixin($f-Z0);
+      background-color: transparent;
+      border: none;
+      color: $graySP-A100;
+      padding: var(--s-Z0);
+      &.active-tab {
+        background-color: $cgreen-B100;
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 6px;
+          background-color: $cgreen-A300;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+:is([class*="adminpanel-"], .stepper-section) {
+  .SCLabel-group {
+    display: flex;
+    gap: var(--s-Z6);
+    margin-bottom: var(--s-Z8);
+    align-items: center;
+    margin-left: var(--s-Z9);
+    &.addMrgn {
+      margin-bottom: calc(var(--s-Z7) + var(--s-Z9));
+    }
+    .ptext {
+      margin-bottom: 0rem;
+    }
+    input:is([type="radio"], [type="checkbox"]) {
+      &.adj-pos {
+        margin-top: calc(var(--s-Z7) + var(--s-Z9));
+        justify-self: center;
+        align-self: flex-start;
+      }
+    }
+  }
+  input:is([type="radio"], [type="checkbox"]) {
+    transform: scale(1.25);
+  }
+  .control {
+    background-color: transparent;
+    border: 2px solid $graySP-A200;
+    padding: calc($control-padding / 2);
+
+    &:has(select, textarea) {
+      padding: 0rem;
+    }
+
+    &:has(.field:is(:hover, :focus)) {
+      border-color: $cgreen-A100 !important;
+      outline: none !important;
+    }
+    .field::placeholder {
+      color: $graySP-A600;
+      font-weight: 300;
+    }
+    .field {
+      &:is(select, textarea) {
+        $result: calc(($control-padding + var(--s-Z7)) / 2);
+        padding: $result 0rem $result $result;
+        margin-inline-end: $result;
+      }
+    }
+
+    &:has(.error, .ng-invalid:not(.ng-untouched)) {
+      border-color: transparent;
+    }
+  }
+}
+
+.stepper-section {
+  padding: var(--s-A2);
+  :is(.step-header, .step-card) {
+    max-width: var(--s-X8);
+  }
+  .step-header {
+    @include FontMixin($f-A6);
+    margin-bottom: var(--s-A2);
+    font-weight: 700;
+  }
+  .step-card {
+    // width: var(--s-X8);
+    // min-height: var(--s-X8);
+    background-color: white;
+    padding: var(--s-A1);
+    border: 1px solid hsla(0, 20%, 20%, 0.07);
+    border-radius: var(--s-Z7);
+
+    .subheader {
+      &:is(.sH-v0, .sH-v1, .sH-v2, .sH-v4) {
+        margin-bottom: var(--s-Z5);
+        font-weight: 600;
+      }
+      &:is(.sH-v0, .sH-v3) {
+        @include FontMixin($f-Z0);
+      }
+      &.sH-v1 {
+        @include FontMixin($f-A1);
+      }
+      &.sH-v2 {
+        @include FontMixin($f-A2);
+      }
+      &.sH-v4 {
+        @include FontMixin($f-Z1);
+      }
+    }
+    .ptext {
+      line-height: var(--s-A3);
+      &.ptxt-sm {
+        font-size: var(--s-Z1);
+        font-weight: 300;
+      }
+    }
+  }
+}

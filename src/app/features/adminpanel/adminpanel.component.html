@@ -1,1 +1,38 @@
-<p>adminpanel works!</p>
+<app-header></app-header>
+<app-adminpanel-navbar></app-adminpanel-navbar>
+<section class="adminpanel-home padding-set main-padding bg-light">
+    <div class="d-flex justify-content-between mb-4">
+        <div>
+            <header class="header">Group homepage</header>
+        </div>
+        <div>
+            <a class="button primary text-decoration-none" routerLink="/adminpanel/add-property">Add new property</a>
+        </div>
+    </div>
+    <div>
+        <section class="mb-2">
+            <header class="sub-header mb-2">Active Properties</header>
+            <div class="row">
+                <div class="col-sm-5 col-md-4 col-lg-3 form">
+                    <div class="control">
+                        <input type="text" class="field" placeholder="Filter by property ID, name, or location">
+                        <div class="suffix">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="my-4">
+            <app-tabs-bar (tabClicked)="onTabClick($event)" [data]="tabs"></app-tabs-bar>
+        </div>
+        <div>
+            @if(openedTab === "op"){
+            <section>
+                <app-home-summary></app-home-summary>
+                <app-table [columns]="tableCols"></app-table>
+            </section>
+            }
+        </div>
+    </div>
+</section>
