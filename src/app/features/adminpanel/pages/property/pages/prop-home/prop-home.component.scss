@@ -1,0 +1,39 @@
+.info-card,
+.calendar-card{
+    border: 1px solid hsla(0, 0%, 50%, 0.537);
+    border-radius: 0.1rem;
+    padding: 1rem;
+    
+    .title{
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    :where(.address, .text){
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+}
+
+
+
+.info-card {
+  display: flex;
+  gap: 1rem;
+  .img {
+    width: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    img {
+        width: inherit;
+      object-fit: contain;
+    }
+  }
+
+  .info{
+    .address{
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+  }
+}
