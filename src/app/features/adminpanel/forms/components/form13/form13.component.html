@@ -1,0 +1,32 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Bathroom details
+    </header>
+    <div class="step-card">
+        <div class="mb-3">
+            <header class="subheader sH-v1">Is the bathroom private?</header>
+            <div>
+                <label for="Q1-Op1" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-Op1" (change)="setFormData('private_bathroom', true)">
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="Q1-Op2" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-Op2" (change)="setFormData('private_bathroom', false)">
+                    <p class="ptext">No, it`s shared</p>
+                </label>
+            </div>
+        </div>
+        <div class="line gray lng-v2 my-4"></div>
+        <div>
+            <header class="subheader sH-v1">Which bathroom items are available in this room?</header>
+            <div>
+                @for (item of items; track $index) {
+                    <label for="pay_{{item}}" class="SCLabel-group addMrgn">
+                        <input type="checkbox" class="scale-1P5" name="question-op" id="pay_{{item}}" (change)="setFormData('bathroom_items', prepareValue($event))" value="{{item}}"> 
+                        <p class="ptext">{{item}}</p>
+                    </label>
+                }
+            </div>
+        </div>
+    </div>
+</section>

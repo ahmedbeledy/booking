@@ -1,0 +1,14 @@
+.borders-normalize{
+    &:nth-child(odd):not(:last-child){
+        border: unset !important;
+    }
+}
+app-custom-radio {
+    &:has(+ app-custom-radio) {
+      .custom-radio {
+        label {
+          border-right: unset !important;
+        }
+      }
+    }
+  }

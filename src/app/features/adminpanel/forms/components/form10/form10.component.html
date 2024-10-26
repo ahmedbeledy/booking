@@ -1,0 +1,31 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        What languages do your or your stuff speak?
+    </header>
+    <div class="step-card">
+        <header class="subheader sH-v0">Select languages</header>
+        <div>
+            <label *ngFor="let lang of languages" for="Op_{{lang.id}}" class="SCLabel-group addMrgn">
+                <input type="checkbox" class="scale-1P5" name="question-op" id="Op_{{lang.id}}"
+                    (change)="setFormData($event)" value="{{lang.name}}">
+                <p class="ptext">{{lang.name}}</p>
+            </label>
+        </div>
+        <div class="line gray lng-v2 my-4"></div>
+        <div class="form">
+            <button class="btn-set btn-link" (click)="showLangForm=true">Add additional languages</button>
+            <div class="row align-items-center justify-content-between" *ngIf="showLangForm">
+                <div class="col-12 col-sm-8">
+                    <div class="control">
+                        <input #lang type="text" class="field" placeholder="Language name" (keydown.enter)="onAddLanguage(lang.value)">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 mt-2 mt-sm-0">
+                    <button type="button" class="btn-set btn-blue-outline with-radius rad-Z7 me-2" (click)="onAddLanguage(lang.value)">Add</button>
+                    <button type="reset" class="btn-set btn-red-outline with-radius rad-Z7" (click)="showLangForm=false;lang.value=''">Cancel</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

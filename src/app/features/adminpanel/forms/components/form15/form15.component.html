@@ -1,0 +1,19 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        What`s the name of this room?
+    </header>
+    <div class="step-card">
+        <p class="ptext ptxt-sm  py-1">this is the name that guests will see on your property page. Choose a name that
+            most accurately describes this room.</p>
+        <div>
+            <div class="form">
+                <label for="name" class="subheader sH-v3 fw-500">Room name</label>
+                <div class="control">
+                    <input #name type="text" id="name" class="field" placeholder="Enter your room name"
+                        (keyup)="setFormData('name', name.value)">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

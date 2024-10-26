@@ -1,0 +1,91 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        House rules
+    </header>
+    <div class="step-card">
+        <header class="subheader sH-v1">What are your check-in and check-out times?</header>
+        <div>
+            <header class="subheader sH-v3 fw-600">Check in</header>
+            <div class="row mb-3 form">
+                <div class="col-6">
+                    <label for="checkin_from" class="subheader sH-v3">From</label>
+                    <div class="control">
+                        <select #checkin_from name="checkin_from" id="checkin_from" class="field"
+                            (change)="setFormData('checkin_from', checkin_from.value)">
+                            <option [value]="null" selected disabled>From</option>
+                            <option *ngFor="let time of times" [value]="time.name">{{time.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="checkin_to" class="subheader sH-v3">To</label>
+                    <div class="control">
+                        <select #checkin_to name="checkin_to" id="checkin_to" class="field"
+                            (change)="setFormData('checkin_to', checkin_to.value)">
+                            <option [value]="null" selected disabled>To</option>
+                            <option *ngFor="let time of times" [value]="time.name">{{time.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <header class="subheader sH-v3 fw-600">Check out</header>
+            <div class="row mb-3 form">
+                <div class="col-6">
+                    <label for="checkout_from" class="subheader sH-v3">From</label>
+                    <div class="control">
+                        <select #checkout_from name="checkout_from" id="checkout_from" class="field"
+                            (change)="setFormData('checkout_from', checkout_from.value)">
+                            <option [value]="null" selected disabled>From</option>
+                            <option *ngFor="let time of times" [value]="time.name">{{time.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="checkout_to" class="subheader sH-v3">To</label>
+                    <div class="control">
+                        <select #checkout_to name="checkout_to" id="checkout_to" class="field"
+                            (change)="setFormData('checkout_to', checkout_to.value)">
+                            <option [value]="null" selected disabled>To</option>
+                            <option *ngFor="let time of times" [value]="time.name">{{time.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line gray lng-v2 my-4"></div>
+        <div class="mb-3">
+            <header class="subheader sH-v3 fw-500">Do you allow children?</header>
+            <div>
+                <label for="Q1-Op1" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-Op1" (change)="setFormData('question1', true)">
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="Q1-Op2" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-Op2" (change)="setFormData('question1', false)">
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+        <div>
+            <header class="subheader sH-v3 fw-500">Do you allow pets?</header>
+            <div>
+                <label for="Q2-Op1" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-Op1" (change)="setFormData('question2', 'yes')">
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="Q2-Op2" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-Op2" (change)="setFormData('question2', 'request')">
+                    <p class="ptext">Upon request</p>
+                </label>
+                <label for="Q2-Op3" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-Op3" (change)="setFormData('question2', 'no')">
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>

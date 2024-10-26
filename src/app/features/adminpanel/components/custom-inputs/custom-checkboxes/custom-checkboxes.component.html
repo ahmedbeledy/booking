@@ -1,19 +1,14 @@
 @if (isDuo) {
-        <div class="custom-checkbox d-flex gap-0">
-            <label [ngClass]="{'checked': isChecked}" (click)="customCheck(true)">Yes</label>
-            <label [ngClass]="{'checked': !isChecked}" (click)="customCheck(false)">No</label>
-            <input type="checkbox" [name]="name" [id]="id" [value]="checkboxValue" [checked]="isChecked">
-        </div>
-        <div class="custom-checkbox">
-        </div>
-        <div class="custom-checkbox">
-            
-        </div>
-
+<div class="custom-checkbox d-flex gap-0">
+    <label [ngClass]="{'checked': isChecked}" (click)="customCheck(true)">Yes</label>
+    <label [ngClass]="{'checked': !isChecked}" (click)="customCheck(false)">No</label>
+    <input type="checkbox" [name]="name" [id]="id" [value]="checkboxValue" [checked]="isChecked">
+</div>
 }
 @if (!isDuo) {
-<div class="custom-checkbox">
+<div class="custom-checkbox" [ngClass]="{_2nd}">
     <label [for]="id" [ngClass]="{'checked': isChecked}">{{label}}</label>
-    <input type="checkbox" [name]="name" [id]="id" [value]="checkboxValue" [checked]="isChecked" (change)="regCheck($event)">
+    <input type="checkbox" [name]="name" [id]="id" [value]="checkboxValue" [checked]="isChecked"
+        (change)="regCheck($event)">
 </div>
 }

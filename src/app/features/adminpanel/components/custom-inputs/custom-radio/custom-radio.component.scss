@@ -1,0 +1,9 @@
+app-custom-radio {
+  &:has(+ app-custom-radio) {
+    .custom-radio {
+      label {
+        border-right: unset !important;
+      }
+    }
+  }
+}

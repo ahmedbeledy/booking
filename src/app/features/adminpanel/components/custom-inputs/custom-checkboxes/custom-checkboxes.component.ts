@@ -11,10 +11,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class CustomCheckboxesComponent {
   @Input() isDuo: boolean = false;
+  @Input() _2nd: boolean = false;
+  
   @Input() id = Math.random().toString(16).slice(2);
   @Input() label: string = "Null";
   @Input() checkboxValue!: any;
-  @Input() name!: string;
+  @Input() name: string =  Math.random().toString(16).slice(2);
   @Input() isChecked: boolean | null = null;
   
   @Output() onChange = new EventEmitter();

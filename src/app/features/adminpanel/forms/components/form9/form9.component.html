@@ -1,0 +1,68 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Tell us about the parking situation at your hotel
+    </header>
+    <div class="step-card">
+        <div>
+            <header class="subheader sH-v1">Is parking available to guests?</header>
+            <div>
+                <label for="Q1-OP1" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP1" (change)="setFormData('question1', 'free')">
+                    <p class="ptext ptxt-v2">Yes, free</p>
+                </label>
+                <label for="Q1-OP2" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP2" (change)="setFormData('question1', 'paid')"> 
+                    <p class="ptext">Yes, paid</p>
+                </label>
+                <label for="Q1-OP3" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP3" (change)="setFormData('question1', 'no')"> 
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+        <ng-container *ngIf="values.question1 === 'free' || values.question1 === 'paid'">
+            <div class="line gray lng-v2 my-4"></div>
+            <div class="mb-3">
+                <header class="subheader sH-v1">Does they need to reserve a parking spot?</header>
+                <div>
+                    <label for="Q2-OP1" class="SCLabel-group">
+                        <input type="radio" name="Q2-Op" id="Q2-OP1" (change)="setFormData('question2', true)"> 
+                        <p class="ptext">Reservation needed</p>
+                    </label>
+                    <label for="Q2-OP2" class="SCLabel-group">
+                        <input type="radio" name="Q2-Op" id="Q2-OP2" (change)="setFormData('question2', false)"> 
+                        <p class="ptext">No reservation needed</p>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <header class="subheader sH-v1">Where is the parking located?</header>
+                <div>
+                    <label for="Q3-OP1" class="SCLabel-group">
+                        <input type="radio" name="Q3-Op" id="Q3-OP1" (change)="setFormData('question3', true)"> 
+                        <p class="ptext">On site</p>
+                    </label>
+                    <label for="Q3-OP2" class="SCLabel-group">
+                        <input type="radio" name="Q3-Op" id="Q3-OP2" (change)="setFormData('question3', false)"> 
+                        <p class="ptext">Off site</p>
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <header class="subheader sH-v1">What type of parking is it?</header>
+                <div>
+                    <label for="Q4-OP1" class="SCLabel-group">
+                        <input type="radio" name="Q4-Op" id="Q4-OP1" (change)="setFormData('question4', true)"> 
+                        <p class="ptext">Private</p>
+                    </label>
+                    <label for="Q4-OP2" class="SCLabel-group">
+                        <input type="radio" name="Q4-Op" id="Q4-OP2" (change)="setFormData('question4', false)"> 
+                        <p class="ptext">Public</p>
+                    </label>
+                </div>
+            </div>
+        </ng-container>
+
+
+    </div>
+</section>

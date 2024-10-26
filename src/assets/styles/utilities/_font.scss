@@ -41,6 +41,12 @@
 }
 
 
+.f-Z1{
+  @include FontMixin($f-Z1);
+}
+.f-Z0{
+  @include FontMixin($f-Z0);
+}
 .f-A1{
   @include FontMixin($f-A1);
 }

@@ -1,0 +1,19 @@
+.custom-counter{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    max-width: 6.5rem;
+    min-width: 6rem;
+    padding: 0.05rem 0rem;
+    font-size: 1.12rem;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    button{
+        all: unset;
+        font-size: 1.4rem;
+        cursor: pointer;
+        &:hover{
+            color: green;
+        }
+    }
+}

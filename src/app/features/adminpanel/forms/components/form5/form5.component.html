@@ -1,0 +1,26 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Where is the property you`re listing?
+    </header>
+    <div class="step-card">
+        <div class="form">
+            <div class="mb-3">
+                <label for="country" class="subheader sH-v3">Country/region</label>
+                <div class="control">
+                    <select #region name="country" id="country" class="field" (change)="setFormData('country', Number(region.value))">
+                        <option [value]="null" selected disabled>Country</option>
+                        <option *ngFor="let area of areas" [value]="area.id">{{area.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="address" class="subheader sH-v3">Find your address</label>
+                <div class="control">
+                    <input #address type="text" id="address" class="field" placeholder="Start typing your address" (keyup)="setFormData('address', address.value)">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

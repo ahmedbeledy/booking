@@ -1,6 +1,7 @@
 <section class="adminpanel-styles padding-set main-padding">
     <header class="header mb-4">Facilities & services</header>
-    <p class="reg-text">Listing your facilities can really help influence guests to book! Update the ones available at your property or on-site below.</p>
+    <p class="reg-text">Listing your facilities can really help influence guests to book! Update the ones available at
+        your property or on-site below.</p>
     <div class="form mb-3">
         <div class="control bg-white">
             <div class="prefix">
@@ -11,5 +12,13 @@
     </div>
     <div class="card">
         <h3 class="title mb-4">Top Facilities</h3>
+        <div>
+            <app-detailed-question label="breakfast" [required]="true" [hasDetails]="true">
+                <div>
+                    <app-custom-checkboxes checkboxValue="Paid"
+                        [isChecked]="true" [_2nd]="true"></app-custom-checkboxes>
+                </div>
+            </app-detailed-question>
+        </div>
     </div>
 </section>

@@ -1,0 +1,26 @@
+<section class="contain-box" [ngClass]="{'warnning': required && value === undefined}">
+    <div class="question-area">
+        <div class="left-side">
+            <header class="box-label">{{label|translate|titlecase}}</header>
+            @if (hasDetails && value) {
+                <button class="details-btn" [ngClass]="{hidden}" (click)="hidden=!hidden">
+                    {{hidden ? "See": "Hide"}} details
+                </button>
+            }
+        </div>
+        <div class="right-side">
+            <div>
+                <div class="d-flex gap-0">
+                    <app-custom-radio label="Yes" [name]="name" [(value)]="value" [radioValue]="true"></app-custom-radio>
+                    <app-custom-radio label="No" [name]="name" [(value)]="value" [radioValue]="false"></app-custom-radio>
+                </div>
+            </div>
+            <!-- <app-custom-checkboxes [isDuo]="true" checkboxValue="{{label|translate|titlecase}}" [isChecked]="isYes" (onChange)="onCheck($event)"></app-custom-checkboxes> -->
+        </div>
+    </div>
+    @if (hasDetails && value && !hidden) {
+        <div class="details-area">
+            <ng-content></ng-content>
+        </div>
+    }
+</section>

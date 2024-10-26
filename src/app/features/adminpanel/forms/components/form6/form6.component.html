@@ -1,0 +1,49 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Tell us about your hotel
+    </header>
+    <div class="step-card">
+        <div>
+            <header class="subheader sH-v1">What`s the name of your hotel?</header>
+            <div class="form">
+                <label for="property_name" class="subheader sH-v3 fw-500">Property name</label>
+                <div class="control">
+                    <input #property_name type="text" id="property_name" class="field"
+                        placeholder="Enter your property name"
+                        (keyup)="setFormData('property_name', property_name.value)">
+                </div>
+            </div>
+            <p class="ptext ptxt-sm  py-1">This name will be seen by guests when they search for a place to stay.</p>
+        </div>
+        <div class="line gray lng-v1 my-4"></div>
+        <div>
+            <header class="subheader sH-v1">What is the star rating of your hotel?</header>
+            <div>
+                <label for="Q1-OP0" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP0" (change)="setFormData('rate', null)" checked>
+                    <p class="ptext">N/A</p>
+                </label>
+                <label *ngFor="let star of stars" for="Q1-OP{{star}}" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP{{star}}" (change)="setFormData('rate', star)">
+                    <p class="ptext">{{star}} {{star === 1 ? "star" : "stars"}} </p>
+                    <p class="ptext"><i *ngFor="let item of Array(star)" class="ri-star-s-fill text-warning"></i></p>
+                </label>
+            </div>
+        </div>
+        <div class="line gray lng-v1 my-3"></div>
+        <div>
+            <header class="subheader sH-v1">Are you a property management company or part of a group or chain?</header>
+            <div class="d-flex align-items-center gap-3">
+                <label for="Q2-OP1" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-OP1" (change)="setFormData('question', true)">
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="Q2-OP2" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-OP2" (change)="setFormData('question', false)">
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</section>

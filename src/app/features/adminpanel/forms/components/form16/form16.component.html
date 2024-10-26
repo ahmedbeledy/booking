@@ -1,0 +1,19 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Set the price per night for this room
+    </header>
+    <div class="step-card">
+        <header class="subheader sH-v1">How much do you want to charge per night?</header>
+        <div>
+            <div class="form">
+                <label for="name" class="subheader sH-v3">Price guests pay</label>
+                <div class="control">
+                    <div class="prefix">US$</div>
+                    <input #price type="" inputmode="numeric" pattern="[0-9\s]{13,19}" id="price" class="field"
+                        placeholder="Price" (keyup)="setFormData('price', castInt(price.value))">
+                </div>
+            </div>
+        </div>
+        <p class="ptext ptxt-sm  py-1">including taxes, commission and charges</p>
+    </div>
+</section>

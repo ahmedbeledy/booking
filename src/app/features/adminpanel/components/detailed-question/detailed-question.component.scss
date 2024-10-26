@@ -1,0 +1,47 @@
+@use "../../../../../assets/styles/abstracts/variables" as *;
+
+.contain-box{
+    padding: var(--s-Z5);
+    border: 1.5px solid $graySP-A200;
+    border-radius: var(--s-Z8);
+    .question-area{
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+        .left-side{
+            .box-label{
+                @include FontMixin($f-Z0);
+                font-weight: 400;
+            }
+            .details-btn{
+                @include FontMixin($f-Z2);
+                background: transparent;
+                border: none;
+                color: $cblue-A100;
+                padding-inline-start: 0;
+                &:hover{
+                    text-decoration: underline;
+                }
+                &::after{
+                    content: "\276E";
+                    display: inline-block;
+                    transform: rotate(90deg);
+                    margin-inline-start: var(--s-Z7);
+                }
+                &:is(.hidden)::after{
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+    .details-area{
+        &::before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1.5px;
+            background-color: $graySP-A200;
+            margin-block: var(--s-Z5);
+        }
+    }
+}

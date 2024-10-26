@@ -1,0 +1,103 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Room details
+    </header>
+    <div class="step-card form">
+        <div class="mb-3">
+            <label for="type" class="subheader sH-v0">What type of unit is this?</label>
+            <div class="control">
+                <select #type name="type" id="type" class="field" (change)="setFormData('type', type.value)">
+                    <option [value]="null" selected disabled>Select type</option>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="type" class="subheader sH-v0">How many rooms of this type do you have?</label>
+            <div class="row">
+                <div class="col-3">
+                    <div class="control">
+                        <input #count type="number" name="count" id="count" class="field"
+                            (change)="setFormData('count', returnValueAsT(count.value))">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="step-card">
+        <header class="subheader sH-v0">Which beds are available in this room?</header>
+        <div class="bed-card">
+            <div>
+                <label>Single bed</label>
+                <p>90 - 130 cm wide</p>
+            </div>
+            <div>
+                <app-custom-count (valueChange)="setFormData('single_bed', returnValueAsT($event))"></app-custom-count>
+            </div>
+        </div>
+        <div class="bed-card">
+            <div>
+                <label>Double bed</label>
+                <p>131 - 150 cm wide</p>
+            </div>
+            <div>
+                <app-custom-count (valueChange)="setFormData('double_bed', returnValueAsT($event))"></app-custom-count>
+            </div>
+        </div>
+        <div class="bed-card">
+            <div>
+                <label>large bed (King size)</label>
+                <p>151 - 180 cm wide</p>
+            </div>
+            <div>
+                <app-custom-count (valueChange)="setFormData('large_bed', returnValueAsT($event))"></app-custom-count>
+            </div>
+        </div>
+        <div class="bed-card">
+            <div>
+                <label>Extra-large bouble bed (Super-king size)</label>
+                <p>181 - 210 cm wide</p>
+            </div>
+            <div>
+                <app-custom-count (valueChange)="setFormData('xlarge_bed', returnValueAsT($event))"></app-custom-count>
+            </div>
+        </div>
+    </div>
+    <div class="step-card">
+        <header class="subheader sH-v0">How many guests can stay in this room?</header>
+        <app-custom-count (valueChange)="setFormData('guests', returnValueAsT($event))"></app-custom-count>
+    </div>
+    <div class="step-card form">
+        <label class="subheader sH-v0">How big is this room?</label>
+        <div class="mb-3">
+            <label for="size" class="d-block f-Z1 text-black-50">Room size - optional</label>
+            <div class="d-flex">
+                <div class="control">
+                    <input #size id="size" type="number" class="field" placeholder="Size"
+                        (change)="setFormData('size', returnValueAsT(size.value))">
+                </div>
+                <div class="control">
+                    <select #unit name="unit" id="unit" class="field" (change)="setFormData('size_unit', unit.value)">
+                        <option [value]="null" selected disabled>Select unit</option>
+                        <option value="ft">ft</option>
+                        <option value="m">m</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label class="subheader sH-v0">Is smoking allowed in this room?</label>
+            <div class="d-flex align-items-center gap-3">
+                <label for="smoking_1" class="SCLabel-group">
+                    <input type="radio" name="smoking_" id="smoking_1" (change)="setFormData('smoking_in', true)">
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="smoking_2" class="SCLabel-group">
+                    <input type="radio" name="smoking_" id="smoking_2" (change)="setFormData('smoking_in', false)">
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>

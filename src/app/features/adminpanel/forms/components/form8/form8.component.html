@@ -1,0 +1,18 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Breakfast details
+    </header>
+    <div class="step-card">
+        <header class="subheader sH-v1">Do you serve guests breakfast?</header>
+        <div>
+            <label for="yes-option" class="SCLabel-group">
+                <input type="radio" name="question-op" id="yes-option" (change)="setFormData(true)">
+                <p class="ptext">Yes</p>
+            </label>
+            <label for="no-option" class="SCLabel-group">
+                <input type="radio" name="question-op" id="no-option" (change)="setFormData(false)">
+                <p class="ptext">No</p>
+            </label>
+        </div>
+    </div>
+</section>

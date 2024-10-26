@@ -1,0 +1,17 @@
+.bed-card{
+    display: flex;
+    justify-content: space-between;
+    &:has(+ .bed-card){
+        margin-bottom: 1rem;
+    }
+    label{
+        font-size: 1.05rem;
+        font-weight: 300;
+    }
+    p{
+        font-size: 0.8rem;
+        color: gray;
+        margin-bottom: 0rem;
+        margin-top: -3.25px;
+    }
+}

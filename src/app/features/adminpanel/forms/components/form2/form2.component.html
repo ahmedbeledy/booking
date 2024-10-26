@@ -1,0 +1,38 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Payments
+    </header>
+    <div class="step-card">
+        <header class="subheader sH-v2">How can your guests pay for their stay?</header>
+        <div>
+            <label for="yes-option" class="SCLabel-group">
+                <input type="radio" class="adj-pos" name="question-op" id="yes-option" (change)="setFormData(true)">
+                <p class="ptext">
+                    Online, when they make a reservation. LaCasa will facilitate your guests's payments with the
+                    Payments by LaCasa service.
+                </p>
+            </label>
+            <label for="no-option" class="SCLabel-group">
+                <input type="radio" name="question-op" id="no-option" (change)="setFormData(false)">
+                <p class="ptext">By credit card, at my property</p>
+            </label>
+        </div>
+    </div>
+    <div class="step-card mt-3">
+        <header class="subheader sH-v0">How Payments by LaCasa works</header>
+        <ol class="ps-inherit">
+            <li class="ptext mb-1"><span class="fw-600">Your guest pays</span> through LaCasa with more options like
+                PayPal, WeChat
+                Pay and AliPay.</li>
+            <li class="ptext mb-1"><span class="fw-600">We facilitate your guest's payment.</span> You don't have to
+                deal with fraud,
+                chargebacks or invalid cards.</li>
+            <li class="ptext mb-1"><span class="fw-600">LaCasa sends payouts to you.</span> You'll receive a bank
+                transfer by the 15th
+                of each month that covers all bookings with a check- out in the previous month.</li>
+        </ol>
+        <header class="subheader sH-v0 mt-3">The payment charge</header>
+        <p class="ptext">You cover the 2.4% payment charge. Of course, no fees are collected when you waive a fee to
+            offer guests free cancellation.</p>
+    </div>
+</section>

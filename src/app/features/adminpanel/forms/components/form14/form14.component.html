@@ -1,0 +1,42 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Bathroom details
+    </header>
+    <div class="step-card">
+        <div>
+            <header class="subheader sH-v1">General amenities</header>
+            <div>
+                @for (item of general; track $index) {
+                    <label for="pay_{{item}}" class="SCLabel-group addMrgn">
+                        <input type="checkbox" class="scale-1P5" name="question-op" id="pay_{{item}}" (change)="setFormData('amenities', prepareValue($event))" value="{{item}}"> 
+                        <p class="ptext">{{item}}</p>
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="line gray lng-v2 my-4"></div>
+        <div>
+            <header class="subheader sH-v1">Outdoors and views</header>
+            <div>
+                @for (item of outdoor; track $index) {
+                    <label for="pay_{{item}}" class="SCLabel-group addMrgn">
+                        <input type="checkbox" class="scale-1P5" name="question-op" id="pay_{{item}}" (change)="setFormData('amenities', prepareValue($event))" value="{{item}}"> 
+                        <p class="ptext">{{item}}</p>
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="line gray lng-v2 my-4"></div>
+        <div>
+            <header class="subheader sH-v1">Food and drink</header>
+            <div>
+                @for (item of edible; track $index) {
+                    <label for="pay_{{item}}" class="SCLabel-group addMrgn">
+                        <input type="checkbox" class="scale-1P5" name="question-op" id="pay_{{item}}" (change)="setFormData('amenities', prepareValue($event))" value="{{item}}"> 
+                        <p class="ptext">{{item}}</p>
+                    </label>
+                }
+            </div>
+        </div>
+    </div>
+</section>

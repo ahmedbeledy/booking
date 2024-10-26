@@ -1,0 +1,34 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Invoicing
+    </header>
+    <div class="step-card">
+        <div>
+            <p class="ptext">At the beginning of each month we will send you an invoice for all complete bookings in the
+                previous month.</p>
+            <header class="subheader sH-v1 mt-3">What name should be on the invoice?</header>
+            <div>
+                <label *ngFor="let invoice of invoices; let i=index" for="Q1-OP{{i}}" class="SCLabel-group">
+                    <input type="radio" name="Q1-Op" id="Q1-OP{{i}}"
+                        (change)="setFormData('question1', invoice.value)"> 
+                        <p class="ptext">{{invoice.name}}</p>
+                </label>
+            </div>
+        </div>
+        <div class="line gray lng-v1 my-4"></div>
+        <div>
+            <header class="subheader sH-v1">Does this recipient have the same address as your property?</header>
+            <div>
+                <label for="Q2-OP1" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-OP1" (change)="setFormData('question2', true)"> 
+                    <p class="ptext">Yes</p>
+                </label>
+                <label for="Q2-OP2" class="SCLabel-group">
+                    <input type="radio" name="Q2-Op" id="Q2-OP2" (change)="setFormData('question2', false)"> 
+                    <p class="ptext">No</p>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</section>

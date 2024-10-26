@@ -1,0 +1,14 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Which cards can you charge at your property?
+    </header>
+    <div class="step-card">
+        <div>
+            <label *ngFor="let card of cards" for="pay_{{card.id}}" class="SCLabel-group">
+                <input type="checkbox" name="question-op" id="pay_{{card.id}}" (change)="setFormData($event)" value="{{card.name}}">
+                <img src="{{card.imagePath}}" width="25px" alt="{{card.name}}">
+                <p class="ptext">{{card.name}}</p>
+            </label>
+        </div>
+    </div>
+</section>

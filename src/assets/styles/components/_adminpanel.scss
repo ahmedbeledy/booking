@@ -65,7 +65,7 @@
     @include FontMixin($f-A3);
     font-weight: 500;
   }
-  .reg-text{
+  .reg-text {
     @include FontMixin($f-A1);
     font-weight: 300;
   }
@@ -105,7 +105,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .title{
+    .title {
       font-size: 1.25rem;
     }
 
@@ -135,19 +135,41 @@
         color: white;
       }
     }
-    .text{
+    .text {
       font-weight: 300;
     }
   }
   .custom-radio,
   .custom-checkbox {
+    &._2nd {
+      label {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        cursor: pointer;
+        &::after {
+          font-size: var(--s-Z4);
+          content: "\2715";
+          display: block;
+          transform: rotate(45deg);
+          transform-origin: center;
+          margin-inline-start: var(--s-Z5);
+          transition: transform 0.25s;
+        }
+        &.checked{
+          &::after {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
     label {
       padding: 0.4rem 0.7rem;
       border: 1px solid $color;
       color: $color;
       font-size: 0.9rem;
       font-weight: 300;
-      &.checked{
+      &.checked {
         background-color: $color;
         color: white;
       }
@@ -236,6 +258,9 @@
     padding: var(--s-A1);
     border: 1px solid hsla(0, 20%, 20%, 0.07);
     border-radius: var(--s-Z7);
+    &:has(+*){
+      margin-bottom: 1rem;
+    }
 
     .subheader {
       &:is(.sH-v0, .sH-v1, .sH-v2, .sH-v4) {

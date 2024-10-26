@@ -1,0 +1,19 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Avaliability
+    </header>
+    <div class="step-card">
+        <p class="ptext">Your property will be <strong>automatically avaliable for booking for the next 18 months</strong> - excluding days you import that are marked as unavailable. You can update your calender after registration.</p>
+        <header class="subheader sH-v1">Do you use a channel manager?</header>
+        <div>
+            <label for="yes-option" class="SCLabel-group">
+                <input type="radio" name="question-op" id="yes-option" (change)="setFormData(true)"> 
+                <p class="ptext">Yes, I use a channel manager</p> 
+            </label>
+            <label for="no-option" class="SCLabel-group">
+                <input type="radio" name="question-op" id="no-option" (change)="setFormData(false)"> 
+                <p class="ptext">No, I don`t use a channel manager</p>
+            </label>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="bg-light stepper-section">
+    <header class="step-header">
+        Which cards can you charge at your property?
+    </header>
+    <div class="step-card">
+        <div>
+            <label *ngFor="let facility of facilities" for="pay_{{facility.id}}" class="SCLabel-group addMrgn">
+                <input type="checkbox" class="scale-1P5" name="question-op" id="pay_{{facility.id}}" (change)="setFormData($event)" value="{{facility.id}}"> 
+                <p class="ptext">{{facility.name}}</p>
+            </label>
+        </div>
+    </div>
+</section>
