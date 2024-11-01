@@ -8,29 +8,29 @@
       </a>
     </div>
 
-    <div class="col-md-7 col">
+    <div class="col">
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/">{{"keywords.Home" | translate}}</a>
+          <a class="nav-link" aria-current="page" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/spaces">{{"keywords.Spaces" | translate}}</a>
+          <a class="nav-link" routerLink="/spaces">Reservation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/aboutus">{{"keywords.AboutUs" | translate}}</a>
+          <a class="nav-link" routerLink="/aboutus">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contactus">{{"keywords.ContactUs" | translate}}</a>
+          <a class="nav-link" routerLink="/contactus">Contact Us</a>
         </li>
       </ul>
     </div>
 
 
-    <div class="col-md-3 col-7 d-flex align-items-center justify-content-center gap-2 px-0">
+    <div class="col-lg-2 col-md-3 col-7 d-flex align-items-center justify-content-center gap-2 px-0">
       <div>
         <a routerLink="/login" class="btn-set btn-orange-light-md with-radius rad-Z7">
           <i class="ri-contract-right-line"></i>
-          {{"actions.SignIn"| translate}} </a>
+          Sign in </a>
       </div>
       <div>
         <button [matMenuTriggerFor]="menu2" class="btn-set btn-green-sm with-radius rad-Z9">
@@ -39,17 +39,17 @@
         <mat-menu #menu2="matMenu" class="m-1" xPosition="before">
           <div class="menu-list">
             <div class="menu-links">
-              <a class="menu-link" routerLink="/">{{"keywords.Home" | translate}}</a>
-              <a class="menu-link" routerLink="/spaces">{{"keywords.Spaces" | translate}}</a>
-              <a class="menu-link" routerLink="/aboutus">{{"keywords.AboutUs" | translate}}</a>
-              <a class="menu-link" routerLink="/contactus">{{"keywords.ContactUs" | translate}}</a>
+              <a class="menu-link" routerLink="/">Home</a>
+              <a class="menu-link" routerLink="/spaces">Spaces</a>
+              <a class="menu-link" routerLink="/aboutus">About Us</a>
+              <a class="menu-link" routerLink="/contactus">Contact Us</a>
             </div>
           </div>
         </mat-menu>
       </div>
       <div>
         <button (click)="onLangChange()" class="btn-set btn-green-sm with-radius rad-Z9">
-          {{nextLang}}
+          {{lang}}
         </button>
       </div>
     </div>

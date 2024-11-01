@@ -3,7 +3,7 @@
 .aboutus-header {
   height: 400px;
   background: linear-gradient(
-    to var(--ToDir),
+    to right,
     $cgreen-A700 0% 40%,
     transparent 40% 80%,
     $cgreen-A700 40% 100%
@@ -38,12 +38,12 @@
   padding: $section-padding;
   margin-inline: auto !important;
   header {
-    font-size: calc(var(--s-B2) * 2 - 0.2rem);//3.5rem
+    font-size: 3.5rem;
   }
   p {
     color: $graySP-A600;
-    font-size: var(--s-A4);//1.3rem
-    line-height: var(--s-A5);//1.5rem
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -51,8 +51,8 @@
   position: relative;
   z-index: 1;
   height: calc(10vw + 450px);
-  background: $main-gradient; //linear-gradient(to bottom, transparent 0% 30%, $cgreen-A700 30%);
-  &::before {
+  background: $main-gradient;//linear-gradient(to bottom, transparent 0% 30%, $cgreen-A700 30%);
+  &::before{
     content: "";
     position: absolute;
     top: 0;

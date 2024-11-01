@@ -29,7 +29,7 @@ export interface IPlace {
     oldPrice: number;
     price: number;
     includeTaxes: boolean;
-    facilities: IFacility[];
+    facilities: any[];
     imageURL: string[];
     count: number;
     guests: number;

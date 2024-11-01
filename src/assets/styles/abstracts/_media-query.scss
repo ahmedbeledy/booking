@@ -23,7 +23,10 @@
 }
 
 @media (max-width: 768px) {
-
+  h1,
+  h2 {
+    font-size: 2.5rem;
+  }
   $section-padding: 2rem 3rem;
   .aboutus-section {
     padding: $section-padding;
@@ -64,13 +67,6 @@
 }
 
 /*********************************/
-@media screen and (min-width: 575px){
-  .stepper-section {
-    .step-card {
-      width: var(--s-X8);
-    }
-  }
-}
 @media screen and (min-width: 768px) {
   :root {
     --s-DVW0: 7.2vw;
@@ -88,13 +84,6 @@
   }
   .bg-image {
     background-size: 100% auto !important;
-  }
-  [dir=rtl]{
-    .banner {
-      .header {
-        text-align: right !important;
-      }
-    }
   }
 }
 

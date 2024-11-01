@@ -1,7 +1,9 @@
 @use "../abstracts/variables" as *;
+
 .main-background.z-1 {
   padding-top: 92px;
 }
+
 
 .padding-set {
   --top-padding: var(--s-Z0);
@@ -28,42 +30,15 @@
   }
 }
 
-.padding-40px {
+.padding-40px{
   padding: 40px;
 }
 
-.pe-6rem {
+.pe-6rem{
   padding-inline-end: 6rem !important;
 }
 
-.pe-4rem {
+
+.pe-4rem{
   padding-inline-end: 4rem !important;
-}
-
-.p-inherit{
-  padding: inherit !important;
-}
-
-.ps-inherit{
-  padding-inline-start: inherit !important;
-}
-
-[class*=pc-]{
-  --Center-Pad: var(--s-Z0);
-  &>*:is(:nth-child(odd), :nth-child(even)){
-    padding: unset;
-  }
-  &>*:nth-child(odd){
-    padding-inline-end: var(--Center-Pad);
-  }
-  &>*:nth-child(even){
-    padding-inline-start: var(--Center-Pad);
-  }
-
-  &.pc-Z6{
-    --Center-Pad: var(--s-Z6);
-  }
-  &.pc-Z8{
-    --Center-Pad: var(--s-Z8);
-  }
 }

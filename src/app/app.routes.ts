@@ -8,8 +8,10 @@ export const routes: Routes = [
   { path: 'login', loadComponent: () => import('./features/login/login.component').then(m => m.LoginComponent) },
   { path: 'register', loadComponent: () => import('./features/register/register.component').then(m => m.RegisterComponent) },
   { path: 'spaces', loadComponent: () => import('./features/spaces/spaces.component').then(m => m.SpacesComponent) },
+  { path: 'projects', loadComponent: () => import('./features/projects/projects.component').then(m => m.ProjectsComponent) },
+  { path: 'partner', loadComponent: () => import('./features/partner/partner.component').then(m => m.PartnerComponent) },
+
   { path: 'space/:id', loadComponent: () => import('./features/space/space.component').then(m => m.SpaceComponent) },
-  { path: 'adminpanel', loadChildren: () => import('./features/adminpanel/adminpanel.module').then(m => m.AdminpanelModule) },
 ];
 
 @NgModule({

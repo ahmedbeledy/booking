@@ -1,0 +1,15 @@
+<div class="property-card">
+  <!-- Image first -->
+  <img [src]="project.imageUrl" [alt]="project.name" class="property-image">
+
+  <!-- Property Listing Details -->
+  <div class="property-listing">
+    <h3>{{ project.name }}</h3>
+    <p>{{ project.description }}</p>
+
+    <div class="button-wrapper">
+      <button class="btn outline">Reserve</button>
+      <button class="btn fill" (click)="onSelect()">Get Directions</button>
+    </div>
+  </div>
+</div>

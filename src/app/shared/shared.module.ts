@@ -13,7 +13,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import { CustomInputNumberComponent } from './components/custom-input-number/custom-input-number.component';
-import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatDatepickerModule,
     MatIconModule,
     MatSelectModule,
-    MatMenuModule,
-    TranslateModule
+    MatMenuModule
   ],
   exports: [
     NavbarComponent,
@@ -47,8 +45,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     MatSelectModule,
     MatMenuModule,
-    CustomInputNumberComponent,
-    TranslateModule
+    CustomInputNumberComponent
   ]
 })
 export class SharedModule { }

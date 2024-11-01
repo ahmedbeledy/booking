@@ -13,7 +13,8 @@ export class PlaceCardComponent {
   randImageIndex = Math.floor(Math.random() * this.assets.length);
   @Input() id = 0;
   @Input() orientation: "Vert" | "Horz" = "Vert";
-  @Input() imageURL: string = this.assets[this.randImageIndex];
+  @Input() imageURL: string =   "https://lacasaresidence.com/api/img/1b8b1ea4-b7a1-43b1-ad77-962d4455a4be.jpeg" 
+
   @Input() routeTo!: string;
   @Input() name!: string;
   @Input() country!: string;
@@ -21,7 +22,7 @@ export class PlaceCardComponent {
   @Input() oldPrice!: number;
   @Input() latestPrice!: number;
   @Input() includeTaxes: boolean = true;
-  @Input() facilities!: IFacility[];
+  @Input() facilities!: any;
   @Input() rooms!: number;
   @Input() beds!: number;
   @Input() bathrooms!: number;

@@ -222,4 +222,8 @@ export class HomeLookupService {
     ])
   }
 
+  getAreas(): Observable<IArea[]> {
+    return new Subject<IArea[]>();
+  }
+
 }

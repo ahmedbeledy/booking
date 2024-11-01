@@ -1,8 +1,8 @@
 <div class="bg-image">
     <app-navbar></app-navbar>
     <section class="w-100">
-        <div class="cards-set card-v2 {{moreClasses}}">
-            <ng-content></ng-content>
+        <div class="cards-set card-v2 bg-white rounded-1">
+            <ng-content select=".mainBody"></ng-content>
         </div>
     </section>
     <app-footer [noBackground]="true"></app-footer>

@@ -47,23 +47,17 @@
   
   --vw-bbl: 375px;
   --vw-ubl: 1200px;
-
-  [dir=ltr]{
-    --ToDir: right; 
-  }
-  [dir=rtl]{
-    --ToDir: left;
-  }
 }
+
 
 $main-font: "Signika";
 $secondary-font: "Merriweather";
 $third-font: "The Seasons";
 $regular-font: Arial, sans-serif;
 
+
 // Green
 $cgreen-A100: hsl(157, 40%, 35%);
-$cgreen-B100: hsla(157, 40%, 80%, 0.4);
 $cgreen-A300: hsl(158, 36%, 28%);
 $cgreen-A500: hsl(157, 37%, 27%);
 $cgreen-A700: hsl(157, 38%, 22%);//#224C3C
@@ -95,8 +89,8 @@ $graySP-G400: hsl(157, 3%, 46%);
 // Red
 $cred-Z000: hsl(4, 83%, 57%);
 // Gradient
-$main-gradient: linear-gradient(to var(--ToDir), $cgreen-A900, $cgreen-A700);
-$secondary-gradient: linear-gradient(to var(--ToDir), $corange-A500, $corange-A400, $corange-A200);
+$main-gradient: linear-gradient(to right, $cgreen-A900, $cgreen-A700);
+$secondary-gradient: linear-gradient(to right, $corange-A500, $corange-A400, $corange-A200);
 
 /**/
 $main-inline-padding: max(8.7vw - var(--s-A2), var(--s-A2));
@@ -104,6 +98,7 @@ $main-padding: var(--s-Z0) $main-inline-padding;
 $pad-v1: var(--s-A3) max(6vw - var(--s-A2), var(--s-A2));
 $section-padding: 2rem 5rem;
 $control-padding: var(--s-Z4);
+/**/
 /**/
 $f-Z4: (
   fs: var(--s-Z4),
@@ -195,3 +190,15 @@ $f-X0: (
     map-get($map: $f-max, $key: lh)
   );
 }
+
+
+
+
+// $bs-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1400px,
+// );

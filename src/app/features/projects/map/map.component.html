@@ -1,0 +1,15 @@
+<div style="height: 400px; width: 100%;">
+    <google-map
+      height="100vh"
+      width="100%"
+      [center]="center"
+      [zoom]="zoom"
+      [options]="mapOptions">
+      <map-marker
+        *ngFor="let project of projects"
+        [position]="{ lat: project.latitude, lng: project.longitude }"
+        [title]="project.name">
+      </map-marker>
+    </google-map>
+  </div>
+  

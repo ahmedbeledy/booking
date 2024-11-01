@@ -2,13 +2,11 @@
   <div class="row align-items-center mb-3 mb-md-0">
     <div class="col-12 col-md-6">
       <h1 class="header">From Home</h1>
-      <h2 class="header text-italic">To Home</h2>
+      <h2 class="header">To Home</h2>
     </div>
     <div class="col-12 col-md-6 text-center">
-      <p class="subtitle fw-300 color-light">{{"paragraphs.BannerParg" | translate}}</p>
-      <a class="btn-set btn-green-gradient-lg with-radius maxw-X7 mx-auto">{{"actions.Explore"|
-        translate}} {{"keywords.Now"|
-        translate}}{{"symbols.!"|translate}}</a>
+      <p class="subtitle fw-300 color-light">Book with Ease, Stay with Confidence!</p>
+      <a class="btn-set btn-green-gradient-lg with-radius maxw-A5 mx-auto">Explore Now!</a>
     </div>
   </div>
   <div class="row">
@@ -16,11 +14,11 @@
       <form [formGroup]="searchForm" (ngSubmit)="search()" class="bg-dark bg-opacity-75 p-4 rounded">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-3">
-            <label for="selectArea" class="banner-label fw-300">{{'forms.labels.SelectArea'|translate}}</label>
+            <label for="selectArea" class="banner-label fw-300">Select Area</label>
             <mat-form-field appearance="outline" class="w-100">
               <mat-icon matIconPrefix>location_on</mat-icon>
-              <mat-select #select id="selectArea" placeholder="{{'forms.labels.SelectArea'|translate}}" formControlName="selectArea">
-                <mat-option selected="" [value]="">{{'forms.labels.SelectArea'|translate}}</mat-option>
+              <mat-select #select id="selectArea" placeholder="Select Area" formControlName="selectArea">
+                <mat-option selected="" [value]="">Select Area</mat-option>
                 @for (area of areas; track area) {
                 <mat-option [value]="area.id">{{area.name}}</mat-option>
                 }
@@ -29,9 +27,9 @@
           </div>
           <div class="col-md-4 row justify-content-evenly">
             <div class="col-6 ps-0 pe-1 px-md-2">
-              <label for="fromDate" class="banner-label fw-300">{{'forms.labels.Duration'|translate}}</label>
+              <label for="fromDate" class="banner-label fw-300">Duration</label>
               <mat-form-field appearance="outline" class="w-100">
-                <input matInput formControlName="fromDate" placeholder="{{'keywords.From'|translate}}" [matDatepicker]="picker1">
+                <input matInput formControlName="fromDate" placeholder="From" [matDatepicker]="picker1">
                 <mat-datepicker-toggle matIconPrefix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
                 <mat-datepicker-toggle matIconSuffix [for]="picker1">
@@ -42,7 +40,7 @@
             <div class="col-6 pe-0 ps-1 px-md-2">
               <label for="guests" class="banner-label fw-300">&nbsp;</label>
               <mat-form-field appearance="outline" class="w-100">
-                <input matInput formControlName="toDate"  placeholder="{{'keywords.To'|translate}}" [matDatepicker]="picker2">
+                <input matInput formControlName="toDate" placeholder="To" [matDatepicker]="picker2">
                 <mat-datepicker-toggle matIconPrefix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
                 <mat-datepicker-toggle matIconSuffix [for]="picker2">
@@ -53,15 +51,15 @@
           </div>
 
           <div class="col-md-3">
-            <label for="guests" class="banner-label fw-300">{{'forms.labels.Guests'|translate}}</label>
+            <label for="guests" class="banner-label fw-300">Guests</label>
             <mat-form-field appearance="outline" class="w-100">
               <mat-icon matIconPrefix>group</mat-icon>
-              <input matInput type="number" name="guests" formControlName="numOfGuests" placeholder="{{'keywords.NumberOf'|translate}} {{'forms.labels.Guests'|translate}}"
+              <input matInput type="number" name="guests" formControlName="numOfGuests" placeholder="number of guests"
                 id="guests">
             </mat-form-field>
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn-set btn-green-dark-sm with-radius">{{'actions.Search'|translate}}</button>
+            <button type="submit" class="btn-set btn-green-dark-sm with-radius">Search</button>
           </div>
         </div>
       </form>

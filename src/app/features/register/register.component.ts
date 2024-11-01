@@ -3,13 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { _PasswordPattern, IForm, IRegister } from '../../core';
 import { RouterModule } from '@angular/router';
 import { CardShellComponent } from "../../shared/components/card-shell/card-shell.component";
-import { HelperService } from '../../shared/services/helper/helper.service';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, CardShellComponent, TranslateModule],
+  imports: [ReactiveFormsModule, RouterModule, CardShellComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -19,7 +17,7 @@ export class RegisterComponent implements OnInit {
   hide_confirm: boolean = true;
   registerForm!: FormGroup;
 
-  constructor(private _FB: FormBuilder, private _helperService: HelperService) { }
+  constructor(private _FB: FormBuilder) { }
 
   ngOnInit(): void {
     const DEFAULT_VALIDATORS = [Validators.required];
@@ -44,12 +42,8 @@ export class RegisterComponent implements OnInit {
 
   register() { }
 
-  matchPassword(){
-    return this._helperService.matchPassword(this.registerForm);
-  }
-
-  doesControlHasError(controlName: string){
-    return this._helperService.doesControlHasError(this.registerForm, controlName);
+  matchPassword(form: FormGroup) {
+    return form.get('password')?.value === form.get("confirm_password") ? true : false;
   }
 
 }

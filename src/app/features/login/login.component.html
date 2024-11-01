@@ -1,56 +1,41 @@
-<app-card-shell [moreClasses]="'bg-white rounded-1 padding-set pad-v2'">
-    <section class="container-fluid padding-set pad-v2">
+<app-card-shell>
+    <section class="container-fluid mainBody">
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="form custom-rows v1">
             <div class="row form-header v1">
-                <h2>{{"keywords.Login"|translate}}</h2>
-                <p>{{"paragraphs.LoginParg"|translate}} <a [routerLink]="['/register']">{{"keywords.Here"|translate}}</a></p>
+                <h2>Login</h2>
+                <p>Don`t have an account yet? create an account <a [routerLink]="['/register']">Here</a></p>
             </div>
             <div class="row">
-                <label for="email" class="label">{{"forms.labels.Email"|translate}}</label>
+                <label for="email" class="label">Email</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-mail-fill"></i></span>
                     <input type="email" id="email" class="field" formControlName="email"
-                        placeholder='{{"forms.placeholders.Email"|translate}}' aria-describedby="email">
-                    @if (doesControlHasError('email')) {
-                    <div class="error">
-                        @if (loginForm.get('email')?.hasError('required')) {<p>{{"forms.labels.Email"|translate}} {{"Errors.IsRequired"|translate}}</p>}
-                        @if (loginForm.get('email')?.hasError('email')) {<p>{{"forms.labels.Email"|translate}} {{"Errors.Invalid"|translate}}</p>}
-                    </div>
-                    }
-
+                        placeholder="Enter your email..." aria-describedby="email">
                 </div>
             </div>
             <div class="row">
-                <label for="password" class="label">{{"forms.labels.Password"|translate}}</label>
+                <label for="password" class="label">Password</label>
                 <div class="control">
                     <span class="prefix main-color"><i class="ri-lock-2-fill"></i></span>
                     <input type="{{hide ? 'password': 'text'}}" id="password" class="field" formControlName="password"
-                        placeholder='{{"forms.placeholders.Password"|translate}}' aria-describedby="password">
+                        placeholder="Enter your password..." aria-describedby="password">
                     <span class="suffix main-color" (click)="hide=!hide"><i
                             class="{{hide? 'ri-eye-off-line': 'ri-eye-line'}}"></i></span>
-                    @if (doesControlHasError('password')) {
-                    <div class="error">
-                        @if (loginForm.get('password')?.hasError('required')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.IsRequired"|translate}}</p>}
-                        @if (loginForm.get('password')?.hasError('pattern')) {<p>{{"forms.labels.Password"|translate}} {{"Errors.Invalid"|translate}}</p>}
-                    </div>
-                    }
                 </div>
             </div>
             <div class="row justify-content-end">
-                <a routerLink="/" class="form-link v1">{{"keywords.Forgot"|translate}} {{"forms.labels.Password"|translate}}{{"symbols.?"|translate}}</a>
+                <a routerLink="/" class="form-link v1">Forget Password?</a>
             </div>
             <div class="row">
-                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-X7 mx-auto"
-                    [disabled]="loginForm.invalid">{{"actions.SignIn"|translate}}</button>
+                <button type="submit" class="btn-set btn-green-gradient-sm with-radius maxw-A5 mx-auto" [disabled]="loginForm.invalid">Sign
+                    In</button>
             </div>
-            <div class="row pc-Z6">
-                <div class="col-6">
-                    <button class="btn-set btn-green-outline with-radius maxw-X7"><i class="ri-google-fill"></i>
-                        Google</button>
+            <div class="row">
+                <div class="col-6 p-0 pe-1">
+                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-google-fill"></i> Google</button>
                 </div>
-                <div class="col-6">
-                    <button class="btn-set btn-green-outline with-radius maxw-X7"><i
-                            class="ri-facebook-circle-fill"></i>
+                <div class="col-6 p-0 ps-1">
+                    <button class="btn-set btn-green-gradient-lg with-radius maxw-A5"><i class="ri-facebook-circle-fill"></i>
                         Facebook</button>
                 </div>
             </div>

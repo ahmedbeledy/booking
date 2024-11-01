@@ -12,7 +12,7 @@ import { Languages } from './core';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, SharedModule, HomeModule]
+  imports: [RouterOutlet, SharedModule, HomeModule, TranslateModule]
 })
 export class AppComponent {
   title = 'LaCasa-Residence';
@@ -22,9 +22,7 @@ export class AppComponent {
   constructor(private translateControl:TranslateControlService){}
 
   ngOnInit(): void {
-    let userPreChoice = this.translateControl.getLang();
-    this.dir = this.translateControl.getDir();
-    this.translateControl.setDefaultLang(userPreChoice);
+    this.translateControl.setDefaultLang(this.lang);
     this.translateControl.onLangChange().subscribe((event: TranslationChangeEvent) => {
       this.dir = this.translateControl.getDir(event.lang as Languages);
     })

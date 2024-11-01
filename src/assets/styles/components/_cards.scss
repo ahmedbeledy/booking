@@ -18,7 +18,7 @@
 
     img {
       width: 100%;
-      //height: 100%;
+      // height: 100%;
       border-radius: 10px;
       opacity: inherit;
     }
@@ -50,7 +50,7 @@
 
   &.card-v3 {
     border: none !important;
-    background: linear-gradient(to var(--ToDir), hsla(0, 0%, 0%, 0.5), transparent)
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.5), transparent)
         left no-repeat,
       url("/assets/img/chair-table-dinning-beach-sea-with-blue-sky.png") center
         no-repeat;

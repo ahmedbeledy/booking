@@ -15,3 +15,67 @@ body, html {
   height: 100%;
   overflow-x: hidden;
 }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: hsl(32, 97%, 75%);
+  text-align: center;
+  font-size: 112px;
+  z-index: 1000;
+  opacity: 1;
+  text-decoration: none;
+}
+
+._2qp0Z {
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgba(0,0,0,.15);
+  color: #4fce5d;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  font-size: 2em;
+  height: 64px;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  outline: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 64px;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  -moz-transition: .2s ease;
+  transition: .2s ease
+}
+
+._2qp0Z:hover {
+  background-color: #5ad167
+}
+
+._2qp0Z:hover svg {
+  fill: #fff
+}
+
+@media(max-width: 480px) {
+  ._2qp0Z {
+      width:48px;
+      height: 48px;
+      font-size: 1.5em
+  }
+}
+
+ 

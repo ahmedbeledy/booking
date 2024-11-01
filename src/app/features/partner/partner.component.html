@@ -1,0 +1,427 @@
+<app-navbar [dark]="true"></app-navbar>
+<br><br>
+<section class="timeline-section section-padding" id="section_3">
+  <div class="section-overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="text-white mb-4">How does it work?</h2>
+      </div>
+      <div class="col-lg-10 col-12 mx-auto">
+        <div class="timeline-container">
+          <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+            <div class="list-progress">
+              <div class="inner"></div>
+            </div>
+            <li >
+              <h4 class="text-white mb-3">Search your favourite topic</h4>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur...</p>
+              <div class="icon-holder">
+                <i class="bi-search"></i>
+              </div>
+            </li>
+            <li>
+              <h4 class="text-white mb-3">Bookmark &amp; Keep it for yourself</h4>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur...</p>
+              <div class="icon-holder">
+                <i class="bi-bookmark"></i>
+              </div>
+            </li>
+            <li>
+              <h4 class="text-white mb-3">Read &amp; Enjoy</h4>
+              <p class="text-white">Lorem ipsum dolor sit amet consectetur...</p>
+              <div class="icon-holder">
+                <i class="bi-book"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 text-center mt-5">
+        <p class="text-white">
+          Want to learn more?
+          <a href="#" class="btn custom-btn custom-border-btn ms-3">Check out Youtube</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Green Section 1 -->
+<div class="container-fluid green-section">
+  <div class="container features-section">
+    <div class="row">
+      <!-- Feature Cards -->
+      <div class="col-md-6">
+        <div class="feature-card" *ngFor="let feature of features">
+          <div class="icon-wrapper">
+            <img [src]="feature.icon" alt="{{ feature.title }}">
+          </div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </div>
+
+      <!-- Why Lacasa Description Section -->
+      <div class="col-md-6 description-section">
+        <h2>Why Lacasa Residence?</h2>
+        <p>
+          We are a tech-enabled, hands-off property management and hospitality company offering modern solutions to
+          traditional furnishing and rental needs. We’ve optimized the digital experience to ensure it’s seamless,
+          hassle-free, and easy, offering better value for our community!
+        </p>
+        <button class="btn btn-primary">Join as a partner</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- White Section 1 -->
+<div class="container-fluid white-section">
+  <div class="process-container">
+    <h1>The below is our seamless, effortless, and fast process for taking care of your unit.</h1>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h2>Fill the form!</h2>
+          <p>You provide unit photos, specify the number of bedrooms, and share the floor plan for screening our
+            apartment. Simple and Fast.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h2>Inspections!</h2>
+          <p>Our team of specialists inspect and screen the unit, then discuss the next steps with the homeowner.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h2>Agreements!</h2>
+          <p>We provide our thorough findings and unit plans, and agree on terms with the homeowner. One step away from
+            being partners!</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h2>Onboarding!</h2>
+          <p>After setting up our leasing contract, we start managing, renovating, decorating, marketing, and operating.
+            Time to do our magic.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h2>Welcome on Board!</h2>
+          <p>Now you can access your partner profile on our app for monthly reports, guaranteed revenue, and
+            effortlessly oversee all operations from the comfort of your home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Green Section 2 -->
+<div class="container-fluid green-section">
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+    <div *ngFor="let faq of faqs; let i = index" class="faq-item">
+      <div class="faq-question" (click)="toggleQuestion(i)">
+        <h2>{{ faq.question }}</h2>
+        <span class="arrow" [ngClass]="{'open': faq.isOpen}">&#9660;</span>
+      </div>
+      <div *ngIf="faq.isOpen" class="faq-answer">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-1">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Where shall we begin?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt
+                ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Quis ipsum suspendisse ultrices gravida.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How do we work together?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt
+                ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Quis ipsum suspendisse ultrices gravida.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Why SCHOLAR is the best?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo
+                website. You can browse by different tags or categories.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Do we get the best support?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                You can also search on Google with specific keywords such as
+                <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 align-self-center">
+        <div class="section-heading">
+          <h6>About Us</h6>
+          <h2>What make us the best academy online?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</p>
+          <div class="main-button">
+            <a href="#">Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-us section" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6  align-self-center">
+        <div class="section-heading">
+          <h6>Contact Us</h6>
+          <h2>Feel free to contact us anytime</h2>
+          <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge.
+            You may support us by sharing our website to your friends.</p>
+          <div class="special-offer">
+            <span class="offer">off<br><em>50%</em></span>
+            <h6>Valide: <em>24 April 2036</em></h6>
+            <h4>Special Offer <em>50%</em> OFF!</h4>
+            <a href="#"><i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-us-content">
+          <form id="contact-form" action="" method="post">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..."
+                    required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- White Section 2 -->
+<!-- <div class="container-fluid white-section">
+    <div class="form-container">
+        <h1>Partner with Birdnest</h1>
+        <p>Utilize your property, we have the know-how! Partner up with Birdnest and forget about unnecessary hassles, mis-leading brokers, and shabby furniture!</p>
+
+        <form (ngSubmit)="onSubmit()" #partnerForm="ngForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <select id="countryCode" name="countryCode" ngModel>
+                    <option value="+20">Egypt +20</option>
+                    <option value="+1">USA +1</option>
+                    <option value="+44">UK +44</option>
+                </select>
+                <input type="tel" id="phone" name="phone" required ngModel>
+            </div>
+
+            <div class="form-group">
+                <label for="area">Select Area</label>
+                <select id="area" name="area" required ngModel>
+                    <option value="">--Select Area--</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Alexandria">Alexandria</option>
+                    <option value="Giza">Giza</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="furnishingStatus">Furnishing Status</label>
+                <select id="furnishingStatus" name="furnishingStatus" required ngModel>
+                    <option value="furnished">Furnished</option>
+                    <option value="unfurnished">Unfurnished</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="propertyType">Property Type</label>
+                <select id="propertyType" name="propertyType" required ngModel>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                    <option value="studio">Studio</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contactTime">Contact Time</label>
+                <select id="contactTime" name="contactTime" required ngModel>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                </select>
+            </div>
+
+            <button type="submit" [disabled]="!partnerForm.form.valid">Download Brochure</button>
+        </form>
+    </div>
+</div> -->
+<div class="contact-us section" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center">
+        <div class="section-heading">
+          <h6>Contact Us</h6>
+          <h2>Feel free to contact us anytime</h2>
+          <p>
+            Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge.
+            You may support us by sharing our website to your friends.
+          </p>
+          <div class="special-offer">
+            <span class="offer">off<br /><em>50%</em></span>
+            <h6>Valid: <em>24 April 2036</em></h6>
+            <h4>Special Offer <em>50%</em> OFF!</h4>
+            <a href="#"><i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-us-content">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contact-form">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" formControlName="name" placeholder="Your Name..." autocomplete="on" required />
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="email" formControlName="email" placeholder="Your E-mail..." required />
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="tel" formControlName="phone" placeholder="Your Phone..." required />
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <select formControlName="selectedArea" required>
+                    <option value="">Select Area</option>
+                    <option *ngFor="let area of egyptianRegions" [value]="area">{{ area }}</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <select formControlName="furnishingStatus" required>
+                    <option value="">Furnishing Status</option>
+                    <option value="Furnished">Furnished</option>
+                    <option value="Unfurnished">Unfurnished</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <select formControlName="propertyType" required>
+                    <option value="">Property Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Studio">Studio</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea formControlName="message" placeholder="Your Message"></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" [disabled]="!contactForm.valid" class="orange-button">Send Message Now</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<app-footer></app-footer>

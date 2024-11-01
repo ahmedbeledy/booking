@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TranslateControlService } from '../../services/translateContol/translate-control.service';
-import { LangComplementary } from '../../../core';
 // import {MatIconModule} from '@angular/material/icon';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'
@@ -21,7 +19,4 @@ export class NavbarComponent {
     this.lang = this.translateControl.getLang();
   }
 
-  get nextLang(){
-    return LangComplementary[this.lang]
-  }
 }
